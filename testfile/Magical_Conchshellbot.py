@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
-TOKEN = '8080267661:AAFqsRJ3u12HZF1031dItC2vhYWzl1301KpjMplMHec'
+TOKEN = '8080267661:AAFqsRJ3u12HZ0131FdItC2vhYW1031zlKpjMplMHec'
 import talk_keh as tk
 
 # TRIGGER_WORDS = {
@@ -40,13 +40,6 @@ def main():
     print("마법의 소라고둥님은 가만히 질문을 기다립니다 ...")
     app.run_polling()
     
-
-
-
-
-
-
-
 
 if __name__=='__main__':
     main()
