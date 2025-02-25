@@ -7,8 +7,8 @@ load_dotenv()
 TOKEN = os.getenv("TELEGRAM_BOT_KEY")
 import talk_keh as tk
 import gemini as gem
-from team3file.melon import mel
-from team3file.movie import mov
+import melon
+import movie
 
 async def start(update, context):  # async는 비동기 처리를 하는 것(스레드 처리와 비슷) !
     await update.message.reply_text("마법의 소라고둥님이 깨어나는 중입니다...")  # 뭔가 할 부분은 await 넣어주면 된다 !
@@ -26,17 +26,18 @@ async def monitor_chat(update, context):
 
     if "gpt" in user_text:
         res = gem.aiai(user_text.replace("gpt",""))
-        await context.bot.send_message(chat_id=chat_id,text=res, parse_mode="MarkdownV2")
+        await context.bot.send_message(chat_id=chat_id,text=res) #parse_mode="MarkdownV2" : 아직 실험중
         
     elif "음악" in user_text:
-        res = mel()
+        res = melon.mel()
         await context.bot.send_message(chat_id=chat_id,text=res)
+
         
     elif "영화" in user_text:
-        res = mov()
+        res = movie.mov()
         await context.bot.send_message(chat_id=chat_id,text=res)
         
-    elif "사진" in user_text:
+    elif "네티" in user_text:
         await send_photo(update,context)
         
     else:

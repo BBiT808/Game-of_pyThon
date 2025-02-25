@@ -6,6 +6,7 @@ def mov():
     
     for n in result:
         print(n["rank"],n["movieNm"])
+    return (n["rank"],n["movieNm"])
 
 if __name__ =='__main__':
     mov()
