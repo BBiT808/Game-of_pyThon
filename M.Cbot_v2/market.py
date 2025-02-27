@@ -7,8 +7,15 @@ def finance():
     web = req.get(url,headers = headers)
     soup = bs(web.content, 'html.parser')
     
-    title = soup.select('.tltle')
-    marketprice = soup.select('td.number:nth-child(3)')
-    
+    title = soup.select('.tltle')[:10]
+    marketprice = soup.select('td.number:nth-child(3)')[:10]
+
+    result = ""
     for i,(t,m) in enumerate(zip(title, marketprice),1):
-        print(f'{i}:', t.text.strip()+" : ",  m.text.strip()+"원")
+        result += f'{i}: {t.text.strip()} : {m.text.strip()}원\n'
+
+    print(result)
+    return result
+
+if __name__ =='__main__':
+    finance()
