@@ -18,7 +18,7 @@ RUN groupadd pkeh && useradd -m -d /home/pkys -s /bin/bash -g pkeh -G sudo pkeh 
        mkdir -p /home/pkeh/.ssh && \
        chown -R pkeh:pkeh /home/pkeh && \
        echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /home/pkeh/.bashrc && \
-       echo "export PATH=$PATH:/home/pkeh/.local/bin"
+       echo "export PATH=$PATH:/home/pkys/.local/bin" >> /home/pkys/.bashrc && \
        chown pkeh:pkeh /home/pkeh/.bashrc && \
        mkdir -p /var/run/sshd && \
        echo "PermitRootLogin no" >> /etc/ssh/sshd_config && \
