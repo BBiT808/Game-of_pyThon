@@ -33,8 +33,8 @@ WORKDIR /home/pkeh
 #pip 업그레이드 및 주피터랩 설치
 RUN pip install --upgrade pip && pip install jupyterlab
 
-#ssh 서버 실행 및 주피터랩 가동(외부 접속 가능)
-CMD ["/bin/bash","-c","service ssh start && python3 -m jupyterlab --ip=0.0.0.0 --port=8888 --allow-root"]
+#ssh 서버 실행 및 주피터랩 가동(외부 접속 가능) -- 20250408 수정 !! 삭제권한 부여 !! 유성쌤 복귀 ^_^
+CMD ["/bin/bash","-c","service ssh start && python3 -m jupyterlab --ip=0.0.0.0 --port=8888 --allow-root --FileContentsManager.delete_to_trash=False"]
 
 #실행
 #CMD ["/bin/bash","-c","service ssh start && exec /bin/bash"]
