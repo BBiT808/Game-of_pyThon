@@ -10,7 +10,7 @@ import gemini as gem
 import movie
 import melon
 import market
-import diet
+import han_menu
 
 async def start(update, context):  # async는 비동기 처리를 하는 것(스레드 처리와 비슷) !
     await update.message.reply_text("마법의 소라고둥님이 깨어나는 중입니다...")  # 뭔가 할 부분은 await 넣어주면 된다 !
@@ -43,7 +43,7 @@ async def monitor_chat(update, context):
         await update.message.reply_text(res)
 
     elif "오늘 메뉴" in user_text:
-        res = diet.busan_menu()
+        res = diet.han_menu()
         await update.message.reply_text(res)
         
     elif "도둑" in user_text:
