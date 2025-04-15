@@ -10,10 +10,12 @@ import pandas as pd
 from bs4 import BeautifulSoup as bs
 from datetime import datetime
 
-def busan_menu(self):
+def busan_menu():
     options = Options()
     options.binary_location = ".\\chrome-win64\\chrome.exe" # chrome 경로설정
-    options.add_argument("--no-sanbox")# sandbox설정
+    options.add_argument("--log-level=3")
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")# sandbox설정
     options.add_argument("--disable-dev-shm-usage") # 공유메모리 설정
     options.add_argument("--window-size=1920,1080") # 화면크기설정, 반응형 웹 대비
     

@@ -43,7 +43,8 @@ async def monitor_chat(update, context):
         await update.message.reply_text(res)
 
     elif "오늘 메뉴" in user_text:
-        res = diet.han_menu()
+        await update.message.reply_text("🍱 메뉴를 불러오는 중입니다. 잠시만 기다려주세요!")
+        res = han_menu.busan_menu()
         await update.message.reply_text(res)
         
     elif "도둑" in user_text:
