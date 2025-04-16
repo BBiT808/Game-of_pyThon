@@ -1,0 +1,212 @@
+04.15 (화)
+
+▶ VS Code
+HDFS 폴더 생성 후 아래 파일 생성
+Dockerfile
+- 텔레그램 강사님 코드 복붙
+> 통합 터미널 > docker login > docker build -t jm-hdfs:1.0 .
+docker-compose.yml
+namenode, datanode1, datanode2, datanode3 생성
+> 통합 터미널 > docker compsoe up -d
+잘못 만들었으면 docker에서 hdfs 지우고 compose 명령어 다시 실행
+
+▶ CMD창
+Alt + Shift + '+' 이걸로 창 나누고
+왼쪽 창에는 ssh hadoop@localhost -p 2220	// namenode
+오른쪽 창에는 ssh hadoop@localhost -p 2221	// datanode
+
+namenode에서 datanode 접속 방법
+- ssh hadoop@datanode1
+
+이건 뭐임
+- ssh-keygen -t rsa > cd .ssh >> id_rsa  id_rsa.pub 조회확인
+- cd ~ > ssh-copy-id hadoop@datanode1 > 1234
+- ssh-copy-id hadoop@datanode2 > yes > 1234
+- ssh-copy-id hadoop@datanode3 > yes > 1234
+
+<비밀번호 없이 접속하기>
+ssh-copy-id hadoop@namenode > ssh hadoop@datanode1
+비번없이 접속되는 거 확인하고나면
+exit로 namenode 빠져나오기
+nano .bashrc 
+>>>> 제일 하단에 이 코드 입력
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HADOOP_HOME=/home/hadoop/hadoop-3.4.1
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export PATH=$PATH:$JAVA_HOME:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+<<<<
+source .bashrc
+$JAVA_HOME
+$HADOOP_HOME
+ㄴ 경로들 다 잘 들어갔는지 확인
+cd $HADOOP_HOME/etc/hadoop
+nano hadoop-env.sh
+>>>> 아래 코드 입력
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+<<<<
+
+==================================================
+
+수정할 파일들 목록 (VS Code에서 수정할 예정)
+nano core-site.xml
+nano hdfs-site.xml
+nano mapred-site.xml
+nano yarn-site.xml
+nano workers
+
+==================================================
+
+▶ VS Code
+확장 > Remote - SSH 설치
+좌측 하단에 파란색 >< 이거 크로스된 모양 클릭 > Connect to host > 새 호스트 추가
+>>>>
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host hadoop_ssh
+    HostName localhost
+    Port 2220
+    User hadoop
+<<<< 저장
+다시 파란버튼 클릭 > Connect to host > hadoop_ssh
+새 창 열리면 비밀번호(1234) 입력
+폴더 열기 > /home/hadoop/ 경로 확인 후 확인버튼 > 비밀번호(1234) 입력
+hadoop-3.4.1 > etc 안에 위에 수정해야할 파일 하나씩 수정...
+1. core-site.xml
+>>>>
+<configuration>
+ <property>
+  <name>fs.defaultFS</name>
+  <value>hdfs://namenode:9000</value>
+ </property>
+ <property>
+  <name>hadoop.tmp.dir</name>
+  <value>/data/hadoop/tmp</value>
+ </property>
+</configuration>
+<<<<
+2. hdfs-site.xml
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>3</value>
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:/data/hadoop/dfs/name</value>
+    <final>true</final>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:/data/hadoop/dfs/data</value>
+    <final>true</final>
+  </property>
+  <property>
+    <name>dfs.permissions</name>
+    <value>true</value>
+  </property>
+</configuration>
+3. mapred-site.xml
+<configuration>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+  <property>
+    <name>mapred.local.dir</name>
+    <value>/data/hadoop/hdfs/mapred</value>
+  </property>
+  <property>
+    <name>mapred.system.dir</name>
+    <value>/data/hadoop/hdfs/mapred</value>
+  </property>
+  <property>
+    <name>yarn.app.mapreduce.am.env</name>
+    <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>
+  </property>
+  <property>
+    <name>mapreduce.map.env</name>
+    <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.env</name>
+    <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>
+  </property>
+</configuration>
+4. yarn-site.xml
+>>>>
+<configuration>
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.resource-tracker.address</name>
+    <value>namenode:8025</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.scheduler.address</name>
+    <value>namenode:8030</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.address</name>
+    <value>namenode:8035</value>
+  </property>
+</configuration>
+<<<<
+5. workers
+>>>>
+datanode1
+datanode2
+datanode3
+<<<<
+
+▶ CMD
+<namenode>
+ls
+cd hadoop-3.4.1/
+ls
+cd etc
+ls
+cd hadoop
+pwd 		// 출력문 /home/hadoop/hadoop-3.4.1/etc/hadoop
+cd ~		// 홈으로 돌아간 뒤 아래 코드 실행
+<namenode를 datanode1에 복사>
+scp -r /home/hadoop/hadoop-3.4.1/etc/hadoop/* hadoop@datanode1:/home/hadoop/hadoop-3.4.1/etc/hadoop
+<namenode를 datanode2에 복사>
+scp -r /home/hadoop/hadoop-3.4.1/etc/hadoop/* hadoop@datanode2:/home/hadoop/hadoop-3.4.1/etc/hadoop
+<namenode를 datanode3에 복사>
+scp -r /home/hadoop/hadoop-3.4.1/etc/hadoop/* hadoop@datanode3:/home/hadoop/hadoop-3.4.1/etc/hadoop
+
+<각 노드에 폴더 생성> - 도커 컴포즈로 생략가능
+sudo mkdir -p /data/hadoop/tmp
+sudo mkdir -p /data/hadoop/dfs/name
+sudo mkdir -p /data/hadoop/dfs/data
+sudo ch -p hadoop:hadoop /data/hadoop
+
+hdfs namenode -format
+start-all.sh
+jps
+hdfs dfs -mkdir -p /user/hadoop
+hdfs dfs -chmod 777 /user/hadoop
+
+▶ 인터넷창
+주소창에 localhost:9870
+Datanodes에 3개 생성 확인
+Utilities > Browse the file system
+띄워지는 창에 Name 부분 user > hadoop > 파일 업로드 시도 (아마 안될것)
+
+▶ PowerToys (먼 티비모양 설치했던거)
+고급 > 호스트 파일 편집기 > 호스트 파일 편집기 시작
+새 호스트 생성
+주소는 127.0.0.1 통일
+namenode, datanode1, datanode2, datanode3 생성
+
+▶ 다시 인터넷창
+파일 업로드 시도 > 완료!
+>> 내가 업로드해놓은 파일을 datanode1~3 모두가 쓸 수 있게됨
+
+
+

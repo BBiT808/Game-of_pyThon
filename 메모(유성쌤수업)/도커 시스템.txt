@@ -1,0 +1,141 @@
+# 도커 시스템 !!!
+
+- 도커 시스템 >> 이미지(읽기전용) >> 컨테이너(수정가능한것) >> 컨테이너
+   ; 컨테이너를 지우면 읽기전용인 이미지(뼈대)만 남음 !!
+
+============================
+#20250310 추가!!
+컨테이너 하나에 운영체제 하나씩 추가 가능 !!
+============================
+
+
+cf) 도커 & 쿠버네티스(온라인 도커)
+
+터미널을 열어서 docker ps / doker ps -a(꺼진 docker앱까지 보여줌 !!)
+          이미지는 docker ps  / 컨테이너는 docker container ps
+  cf) 이때 container ID는 자동으로 부여받은 해시값 !!
+
+docker start (컨테이너 이름이나 해시값) : 컨테이너 실행 !!
+docker stop (컨테이너 이름이나 해시값) : 컨테이너 중지 !!
+
+docker pull (프로그램이름) : 프로그램을 다운받을 수 있음!!
+ ex) docker pull ubuntu
+  >> 버전을 지정해서 다운받을 수도 있다 !!
+      ex) docker pull ubuntu:22.04
+
+docker images : 이미지 확인
+docker rmi (image TAG / IMAGE ID) : 이미지 삭제
+docker run : 컨테이너 생성 명령어
+
+★PS C:\Users\Admin> docker run -itd -p 22
+                              ㄴdocker를 run하는데 -p포트가 22다.
+                                                           :22 ; 하면 문을 닫아주는거임 !! 잠가버리는거야!!
+                                                      cf) 이 뒤에 -p 8888:8888을 붙이면 주피터랩으로 들어갈 수 있다 !!
+
+★PS C:\Users\Admin> docker run -itd -p 22:22 --name ubuntu01
+                                                                ㄴ--name 하고 이름을 설정해줄 수 있다!!! 여기서는 ubuntu니까 ubuntu01이라고 임의로 설정해줬음 !!
+                                                   
+★PS C:\Users\Admin> docker run -itd -p 22:22 --name ubun:1.0 --hostname PKNU : 호스트 네임도 임의로 설정해준 것 !! 만약 설정하지 않으면 해시값으로 표현된다나 ~.~
+
+
+★PS C:\Users\Admin> docker run -itd -p 22:22 --name ubun:1.0 --hostname PKNU -v D:\\keh\\code:/home/data  : container 안의 home/data 폴더와 keh/code 폴더를 연결시켰다 !!!!!!
+
+
+
+★PS C:\Users\Admin> docker run -itd -p 22:22 --name ubuntu01 --hostname PKNU -v D:\\keh\\code:/home/data ubuntu:22.04  : 최종 컨테이너 생성 명령어 !!! 심지어 ubuntu 22.04가 설치되어있지 않으면 당겨서 설치해줌 !!!
+
+ >> 최종 만들어졌을 때 뱉어내는 해시코드가 컨테이너 이름 !!
+
+★PS C:\Users\Admin> docker exec -it ubuntu01 bash
+                                         ㄴ 실행한다는 뜻의 exec, -it 뒤에 d는 붙이지 않음. 지금은 필요없대 ~.~
+
+
+_______________________________________________________________________________________
+
+# 20250307 수업 !!!
+
+-p 빼고는 다 대시 두 개(--)
+
+docker run --name jupy01 -p 8888:8888 내부의 8888서버에 외부의 8888을 연결한다 !!
+
+★ PS C:\Users\Admin> docker run --name jupy01 -p 8888:8888 -v D:\\keh\\code:/home/jovyan/data
+ >> -v(내 컴퓨터의 드라이브를 마운팅) ; 내 컴퓨터의 code 폴더와 컨테이너 내의 data 폴더를 연결시켰다 !
+
+-itd : terminal 에 입력 가능하게 하겠다, detach 가능하게 하겠다 ~
+
+docker logs (jupy01 : 만든 컨테이너 이름) : 로그를 보여준다 !!
+
+--hostname PKNU --user root : root 권한 계정으로 로그인 할 수 있다 !!
+
+passwd : 새로운 비밀번호 설정 가능 !!!
+
+adduser pkuser : 새로운 유저를 넣을건데 그 이름이 pkuser
+
+rm 쓸때는 폴더나 슬러시 위치 확인하자 !!!! 특히 스페이스바 쓰지 말 것!!! (잘못하면 하위 폴더 전부 다 지칭하게 됨)
+
+
+_______________________________________________________________________________
+
+#20250310 수업 !!!!!!!!!
+
+docker system prune (-a): 지우기 !!!!! ; 가지치기
+
+docker run -itd --rm --user root --hostname PKNU --name ju02 -p 8888:8888 -v d:\\keh\\code:/home/jovyan sha256:58377aaa152b741e244f201679f96d909a024ea337088cc276b0ee32ab3f076f(jupyter/pyspark-notebook:latest) ; 이미지의 해시값  
+>> 만든 컨테이너를 종료시킬 때 없애버리겠다 !!!
+
+
+★Dockerfile.txt : 대문자로 시작함 !!!
+.txt 지워주기
+Dockerfile(.txt) 안에 ; 이 일련의 과정은 우분투 서버를 미리 자동화 시키는 것임 !!
+
+#베이스 이미지
+FROM ubuntu:22.04
+
+#메타데이터 추가
+LABEL maintainer="EH image https://github.com/BBiT808/Game-of_pyThon"
+
+#시스템 업데이트
+RUN apt update -y && ; 앰퍼센트 앞이 끝나면 뒤를 실행하라.
+cf1) &&\ : 다음줄에 쓸게요~
+>>코드를 길게 써보기 전 각 줄에 RUN을 붙여 실행해보면서 어떤 곳이 틀렸는지 확인해보자 !! + 캐시가 저장되어 틀린 것을 고친 후 다시 돌리면 빨리 실행된다 !!
+cf2) 다이어트!!! 를 하는 이유 ^0^
+      : RUN으로 행위를 계속 끊어주게 되면 레이어가 겹치고, 이미지가 무거워져서 별로임 ~
+       >> 나중에 들여쓰기를 맞추고 끝에 && \를 붙여서 다이어트 시켜주자 !
+
+RUN groupadd pkeh && useradd -m -d /home/pkys -s /bin/bash -g pkeh -G sudo pkeh 
+       : 권한 높이기!!
+
+RUN chown -R pkeh:pkeh /home/pkeh : 폴더 권한 높이기 !!
+
+RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /home/pkeh/.bashrc : 자바의 환경변수  설정 및 나의 개인화폴더에 집어 넣는 과정 !!!!
+
+cf) * Starting OpenBSD Secure Shell server sshd : 외부에서 접속 가능하다는 뜻
+ssh localhost(내 컴퓨터라는 뜻 ; 127.0.0.1 = 본인 ip라는 뜻 !!)
+
+
+RUN echo "permitRootLogin no" >> /etc/ssh/sshd_config
+RUN echo "passwrdAuthentication yes" >> /etc/ssh/sshd_config
+(권한 및 비밀번호 없이 들어올 수 있게 설정 !!)
+
+#사용자 변경
+USER pkeh
+
+#작업환경 변경
+WORKDIR /home/pkeh
+
+#pip 업그레이드 및 주피터랩 설치
+RUN pip install --upgrade pip && pip install jupyterlab
+
+#ssh 서버 실행 및 주피터랩 가동(외부 접속 가능)
+CMD ["/bin/bash","-c","service ssh start && python3 -m jupyterlab --ip=0.0.0.0 --port=8888 --allow-root"]
+
+#실행
+#CMD ["/bin/bash","-c","service ssh start && exec /bin/bash"]
+
+docker build -t eh:1.1 .  >> 만든 Dockerfile을 기반으로 서버 만들어줌 !!!
+
+
+cf) 포트가 계속 막힐 때
+: 관리자 권한으로 터미널을 열고
+net stop winnat
+"Windows NAT Driver 서비스를 잘 멈추었습니다."
