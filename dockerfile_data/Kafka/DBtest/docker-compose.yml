@@ -7,7 +7,7 @@ services:
     hostname: JUPYTERLAB
     command: /bin/bash -c "service ssh start && python3 -m jupyterlab --ip=0.0.0.0 --port=8888 --allow-root --FileContentsManager.delete_to_trash=False"
     ports:
-      - '8888:8888' # jupyterlab 기본 웹포트 8888 !
+      - '8889:8888' # jupyterlab 기본 웹포트 8888 !
       - '22:22' # ssh 기본 포트
     volumes:
       - D:\keh\code:/home/pkdata/pkdata   ## 이렇게 해주면 나중에 docker에서 volumes에 따로 저장이 됨 ! ; 도커볼륨과 컨테이너 내부의 저장공간 연결 !!
