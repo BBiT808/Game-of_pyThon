@@ -1,0 +1,5 @@
+#20250520 자바스크립트 필기!!!
+element.classList.add("클래스명") // 클래스 추가
+element.classList.remove("클래스명") // 클래스 제거
+element.classList.contains("클래스명") // 클래스 존재 ? -> true / false
+element.classList.toggle("클래스명")
