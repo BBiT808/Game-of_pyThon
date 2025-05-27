@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호이! 호이! 둘리는(스팅) ; 물 위로 떠오르는 것 같은..</title>
+    <script>
+        // function abc(){} // 야 !!! abc라는 함수가 있어!! 지금 선언할게 ㅇ0ㅇ
+        // abc();
+
+        // function abc(){
+        //     console.log("안녕");
+        // }
+        
+        // function efg(){}
+        // let bb;
+        // console.log(bb);
+        // bb = "나는 밤 양 갱";
+
+    console.log("_______________________________")
+        // let bb ="test";
+        // console.log(bb);
+
+        // 호이스팅 변수와 함수가 최상단에 끌려올라가는 현상 !!!!
+        // 내용은 기본값으로 선언 ~!
+
+
+
+        function abc() {}
+        var num; // undefined
+        var num = 256;
+
+        console.log(num)
+        abc();
+
+        /* 1. 변수 호이스팅 */
+        consol.log(num);
+        var num = 1256;
+        console.log(num);
+
+        /* 2. 함수 호이스팅 */
+        function abc() {
+            let bb = "나는 밤양갱";
+            console.log(bb);
+        }
+        // abc();
+        // console.log(bb);
+    </script>
+</head>
+<body>
+</body>
+</html>

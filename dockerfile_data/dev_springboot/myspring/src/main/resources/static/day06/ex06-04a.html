@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --img1: 200px;
+            --img1h:100px;
+        }
+        body{
+            border : 1px solid #000
+        }
+        div{
+            /* display : inline-block; */
+            /* text-align: center; */
+        }
+        img{
+            /* display: block; */
+            /* margin : 0 auto; */
+
+            position : relative;
+            left : calc(50% - var(--img1h));
+            /* left : 40%; */
+            width : var(--img1);
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <div>
+        <img src="https://blog.malcang.com/wp-content/uploads/2024/03/1-1.png" 
+            alt="">
+    </div>
+</body>
+</html>

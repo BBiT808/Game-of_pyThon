@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달~ 모달~</title>
+    <style>
+        .modal {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0, 0, 0, 0.767);
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left : 0;
+            display: none;
+        }
+        .modal.show{
+            display: flex;
+        }
+        .login {
+            background-color: white;
+            width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px #1f0101;
+            padding: 50px 50px 80px; 
+            box-sizing: border-box;
+        }
+        h2 {
+            margin : 0;
+            padding: 0;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+        input, 
+        form > button {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px #ccc;
+            box-sizing: border-box;
+            width: 100%;
+            height: 40px;
+        }
+        form > button {
+            background-color: pink ;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.modal>div.login>h2{로그인}+form>input+button+button -->
+    <div class="modal"
+         id = "window">
+        <div class="login">
+            <h2>로그인</h2>
+            <form action=""#>
+                <input type="text">
+                <input type="text">
+                <button type ="submit">로그인</button>
+                <button onclick = "shut()">취소</button>
+            </form>
+        </div>
+    </div>
+
+    <h1>간 단 한 내 용 들</h1>
+    <button type ="button" onclick = "show()">열림</button>
+    <h3>
+        넌 양자택일 극단적이야 넌 너무 긴장 하 지 말 아~
+    </h3>
+</body>
+<script>
+    const win = document.querySelector("#window");
+    
+    const show = () => {
+        win.classList.add("show");
+    }
+
+    const shut = () => {
+        win.classlist.remove("show");
+    }
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style :none;
+            width: 100px; 
+            height : 40px;
+            line-height: 40px;
+            text-align : center;
+            margin:10px;
+            border : 1px solid #222;
+            display : inline-block;
+            /* display : none; */
+        }
+        a{
+            text-decoration: none;
+        }
+        .non{
+            /* display :none; */
+        }
+        .hid{
+            /* visibility: hidden; */
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <!-- nav>ul>(li>a{메뉴$})*4 -->
+    <nav>
+        <ul>
+            <!-- none과 hidden의 차이 !!! -->
+            <li><a href="#">메뉴1</a></li>
+            <li class = "hid"><a href="#"> 메뉴2</a></li>
+            <li class = "hid"><a href="#"> 메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li class = "non"><a href="#"> 메뉴5</a></li>
+            <li class = "non"><a href="#"> 메뉴6</a></li>
+            <li><a href="#">메뉴7</a></li>
+            <li><a href="#">메뉴8</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

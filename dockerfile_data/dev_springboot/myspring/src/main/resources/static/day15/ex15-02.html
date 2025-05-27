@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        const ran = Math.floor(Math.random()*10000);
+        let list = "";
+        if(ran<0.03){
+            list += `<h1> 0.03%의 확률로 비스트 이터널슈가 쿠키 출현</h1>`;
+        } else if (ran < 3) {
+            list += `<h1>3%의 확률로 슈퍼에픽 스타더스트 쿠키 출현</h1>`
+        } else if (ran < 5) {
+            list += `<h1>5%의 확률로 에픽 아라모드맛 쿠키 출현</h1>`
+        } else if (ran < 10) {
+            list += `<h1>10%의 확률로 레어 공주맛 쿠키 출현</h1>`
+        } else {
+            list += `<h1> 일반 등급 용감한 쿠키 출현</h1>`
+        }
+        list += `<hr>랜덤수치는 ${ran}값입니다.`;
+        document.body.innerHTML = list;
+    </script>
+</body>
+</html>

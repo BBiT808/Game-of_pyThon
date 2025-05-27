@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h2{
+            font-size: 3rem;
+            transition: 2s ease-in;
+            animation: items 0.3s ease-in infinite alternate;
+        }
+        h2:hover{
+            color: lightpink;
+            animation: none;
+        }
+        @keyframes items{
+            0% {
+                padding: 10px;
+                background-color: aliceblue;
+            }
+            100%{
+                padding: 5px;
+                background-color: aquamarine;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>반가워요 !</h2>
+    </div>
+    
+</body>
+</html>

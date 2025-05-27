@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제 !!! 과일 바구니 🍓🍌</title>
+</head>
+<body>
+    <script>
+        /* 빨리 쓰는 법... 미리 그냥 다 써넣고 단어 더블클릭 + '' 누르기 ^_^ */
+        const arr = ['딸기','바나나','사과','수박','배','키위','두리안','망고','포도'];
+        
+        // inp1 "${arr} 중 제거하고 싶은 품목을 입력하세요 !"
+        // inp2 "${arr} 외에 추가하고 싶은 품목을 입력하세요!"
+        // innerHTML 제거하고 추가하고 정리된 품목은 arr 입니다!
+
+        console.log(arr)
+
+        const inp1 = prompt("바구니에서 제거하고 싶은 과일을 입력하세요 !");
+        const num = arr.indexOf(inp1);
+          arr.splice(num,1);
+
+          if (num == -1) {
+            console.log("바구니 안에 과일이 없습니다!");
+        } else {
+            console.log (`${num}번째 순서로 ${arr[num]} 과일이 있습니다 ^_^`)
+        }
+        
+        const inp2 = prompt("그 외에 추가하고 싶은 과일을 입력하세요 ! ")
+          arr.splice(0, 0, `${inp2}`);
+
+        document.body.innerHTML = arr
+       
+    </script>
+    
+</body>
+</html>

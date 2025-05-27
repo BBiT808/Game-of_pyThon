@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타임아웃! (삐빅)</title>
+    <script>
+        // function pt(i) {
+        //     console.log(name + "안녕 !!!");
+        // }
+        // setTimeout(pt("홍길동"), 1000);
+        // setTimeout(pt("홍"),2000);
+        // setTimeout(pt("길 ! 동 !~"), 3000);
+
+        function pt(name) {
+            console.log(name + " 안녕 !!!");
+        }
+        setTimeout(function () {
+            pt("홍길동");
+        }, 1000);
+        setTimeout(() => pt("홍"), 2000);
+        setTimeout(pt, 3000);
+    </script>
+</head>
+<body>
+    <h1>저는 곧 변해요 !!!</h1>
+    <script>
+
+       /*  방식 1 !! */
+        const cg = () => {
+            const h1 = document.querySelector("h1");
+            h1.textContent = "방식 1로 변~~~ 신 ~~~!!";
+        };
+        // setTimeout(() => {
+        //     const h1 = document.querySelector("h1");
+        //     h1.textContent = "변 ~~ 신~~ !";
+        // }, 2000);
+
+        setTimeout(cg, 2000);
+        /* 방식 2 */
+        setTimeout(() => document.querySelector("h1").textContent = "방식 2로 변했어요!", 4000);
+
+
+        /* 방식 3 !!! - 인자 넣기 !! */
+        const cc = (text) => {
+            const h1 = document.querySelector("h1");
+            h1.textContent = text;
+        };
+        setTimeout(() => cc("띠로로로로로로롱~"), 4000);
+        setTimeout(() => cc("뾰로로로로롱~"), 5000);
+        setTimeout(() => cc("정의는 승리한다! 변 신 완 료 !"), 6000);
+
+        /* 방식 4 - 인 자 넣 기 2 */
+        setTimeout(cc, 7000, "두두두둥");
+        setTimeout(cc, 8000, "콰콰콰쾅");
+        setTimeout(cc, 9000, "방식 4~~로 변~~~신...~~~?");
+
+    </script>
+</body>
+</html>

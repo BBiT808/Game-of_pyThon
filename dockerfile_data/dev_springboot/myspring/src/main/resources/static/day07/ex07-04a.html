@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #3e3e3eba;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin : 0;
+        }
+        .login-container{
+            background-color: rgb(255, 253, 245);
+            padding : 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            width: 300px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        input{
+            width: 93%;
+            padding : 10px;
+            margin: 10px 0;
+            border : 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width:100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: moccasin;
+            color: rgb(77, 14, 14);
+            font-size: 1rem;
+            cursor: pointer;
+            margin : 10px 0;
+        }
+        button:hover{
+            background-color: antiquewhite;
+        }
+        button:last-of-type{
+            background-color: rgb(226, 205, 174);
+        }
+        button:last-of-type:hover{
+            background-color: rgb(255, 246, 234);
+        }
+    </style>
+</head>
+<body>
+    <!-- div.login-container>h2{로그인}+form>(label+input)*2+button+hr+button -->
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <div class="login-container">
+        <h2>로그인</h2>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdQgX9l8tgYmn5NYU__vdKeUZZuk_-S7DJHtuMnEa97P2zzHg/formResponse?">
+            <label for="id">ID : </label>
+            <input 
+            type="text" 
+            placeholder = "이름 입력" 
+            id="id" 
+            name = "entry.892521915" 
+            required>
+            <label for="pw">Password : </label>
+            <input 
+            type="password" 
+            placeholder="비밀번호 입력"  
+            id="pw" 
+            name= "entry.271121599" 
+            required>
+            <button>로그인</button>
+            <hr />
+            회원이 아니신 분은 회원가입을 해주세요.
+            <button>가입하기</button>
+        </form>
+    </div>
+</body>
+</html>

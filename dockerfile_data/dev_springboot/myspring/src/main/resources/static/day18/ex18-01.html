@@ -1,0 +1,37 @@
+<!-- 20250521 오마이갓오늘야구보러감마이심장이즈뿜뿜그리고자바스크립트..몇번째수업이야. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교재 p(204-)205 해보기 !!!!!</title>
+    <script>
+        function sumAll(a,b) {
+            let output = 0
+            for (let i = a; i<=b; i++) {
+                output += i
+            }
+            return output
+        }
+        console.log(`1부터 100까지의 합 : ${sumAll(1,100)}`)
+        console.log(`1부터 500까지의 합 : ${sumAll(1,500)}`)
+
+        function min(array) {
+            let output = array[0]
+            for (const item of array) {
+                // 현재 output보다 더 작은 item이 있다면
+                if (output > item) {
+                    // output의 값을 item으로 변경
+                    output = item
+                }
+            }
+            return output
+        }
+
+        const testArray = [52, 273, 32, 103, 275, 24, 57]
+        console. log(`${testArray} 중에서`)
+        console.log(`최솟값 = ${min(testArray)}`)
+    </script>
+</head>
+<body></body>
+</html>

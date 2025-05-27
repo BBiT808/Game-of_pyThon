@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 🌸 Spring부트의 HTML 실습 !! 🍒</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(255, 197, 202, 0.589);
+            color: white;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .menu a,
+        .sidebar a {
+            text-decoration: none;
+            color: rgb(255, 251, 240);
+            font-weight: 550;
+            /* line-height: 1.8rem; */
+        }
+
+        .container {
+            display: flex;
+            height: 90vh;
+        }
+
+        .sidebar {
+            background-color: rgba(255, 178, 178, 0.836);
+            color: white;
+            padding: 2rem;
+            /* width: 220px; */
+            flex-basis: 180px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .main {
+            flex: 1;
+            background-color: white;
+            padding: 2rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        table {
+            display: flex;
+            justify-content: center;
+            border-spacing: 30px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+        video {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div.navbar>div.logo{MySite}+div.menu>a{Home}*3 -->
+    <div class="navbar">
+        <div class="logo">🍒🍓 HTML 수업 파일 목차 : 3 🌸🍭</div>
+        <div class="menu">
+            <a href="#main">Home</a>
+            <a href="#" onclick="openPopup()">About</a>
+        </div>
+    </div>
+    <!-- div.container>div.sidebar>h2{메뉴}+a{대시보드}*3^div.main>h1{Flex 기반 대시보드}+p{페이지 설명} -->
+    <div class="container">
+        <div class="sidebar">
+            <h2>회차</h2>
+            <a href="#" data-day="day01">Day 01</a>
+            <a href="#" data-day="day02">Day 02</a>
+            <a href="#" data-day="day03">Day 03</a>
+            <a href="#" data-day="day04">Day 04</a>
+            <a href="#" data-day="day05">Day 05</a>
+            <a href="#" data-day="day06">Day 06</a>
+            <a href="#" data-day="day07">Day 07</a>
+            <a href="#" data-day="day08">Day 08</a>
+            <a href="#" data-day="day09">Day 09</a>
+            <a href="#" data-day="day10">Day 10</a>
+            <a href="#" data-day="day11">Day 11</a>
+            <a href="#" data-day="day12">Day 12</a>
+            <a href="#" data-day="day13">Day 13</a>
+            <a href="#" data-day="day14">Day 14</a>
+            <a href="#" data-day="day15">Day 15</a>
+            <a href="#" data-day="day16">Day 16</a>
+            <a href="#" data-day="day17">Day 17</a>
+
+        </div>
+        <div class="main" id="main">
+            <h1>HTML 및 JavaScript 수업 정리!</h1>
+            <p>20250422 - 2025052</p>
+            <video src="./ref/blowin_in_the_mind.mp4" width="500" controls autoplay loop muted></video>
+        </div>
+    </div>
+</body>
+<script>
+    const sidebarLinks = document.querySelectorAll('.sidebar a');
+    const homeLink = document.querySelector('.menu a[href="#main"]');
+    const main = document.querySelector('.main');
+
+    const initialMainContent = `<h1>HTML 및 JavaScript 수업 정리!</h1>
+            <p>20250422 - 2025052</p>
+            <video 
+        src = "./ref/blowin_in_the_mind.mp4"
+        width = "500"
+        controls
+        autoplay
+        loop
+        muted
+    ></video>`;
+
+    const dayContents = {
+        day01: `<h1> 🥚 1일차 🐣 </h1>
+        <table>
+        <tr>
+            <td><a href="./day01/ex01-01.html" style ="text-decoration: none;">🌸 예제 1</a><br /></td>
+            <td><a href="./day01/ex01-02.html" style ="text-decoration: none;">🍒 예제 2</a><br /></td>
+            <td><a href="./day01/ex01-03.html" style ="text-decoration: none;">🌸 예제 3</a><br /></td>
+        </tr>
+        <tr>
+            <td><a href="./day01/ex01-04.html" style ="text-decoration: none;">🍒 예제 4</a><br /></td>
+            <td><a href="./day01/ex01-05.html" style ="text-decoration: none;">🌸 예제 5</a><br /></td>
+            <td><a href="./day01/ex01-06.html" style ="text-decoration: none;">🍒 예제 6</a><br /></td>
+        </tr>
+        <tr>
+            <td><a href="./day01/ex01-07.html" style ="text-decoration: none;">🌸 예제 7</a><br /></td>
+            <td><a href="./day01/ex01-07-1.html" style ="text-decoration: none;">🧐 예제 7 과제 1 !!</a><br /></td>
+            <td><a href="./day01/ex01-07-2.html" style ="text-decoration: none;">🤓 예제 7 과제 2 !!</a><br /></td>
+        </tr>
+        <tr>
+            <td><a href="./day01/ex01-08.html" style ="text-decoration: none;">🍒 예제 8</a><br /></td>
+            <td><a href="./day01/ex01-09.html" style ="text-decoration: none;">🌸 예제 9</a><br /></td>
+            <td></td>
+        </tr>
+    </table>`,
+        day02: `<h1>🐣 2일차 🐥</h1>
+        <table>
+        <tr>
+            <td><a href="./day02/ex02-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+            <td><a href="./day02/ex02-01a0.html" style ="text-decoration: none;">🍒 알림창 만들기 !</a></td>
+            <td><a href="./day02/ex02-01a1.html" style ="text-decoration: none;">🧐 책 예제 1 p86</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day02/ex02-01a2.html" style ="text-decoration: none;">🤓 책 예제 2 p87</a></td>
+            <td><a href="./day02/ex02-02.html" style ="text-decoration: none;">🌸 예제 2</a></td>
+            <td><a href="./day02/ex02-03.html" style ="text-decoration: none;">🍒 예제 3</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day02/ex02-04.html" style ="text-decoration: none;">🌸 예제 4</a></td>
+            <td><a href="./day02/ex02-05.html" style ="text-decoration: none;">🍒 예제 5</a></td>
+            <td><a href="./day02/ex02-06.html" style ="text-decoration: none;">🌸 예제 6</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day02/ex02-07.html" style ="text-decoration: none;">🍒 예제 7</a></td>
+            <td><a href="./day02/ex02-08.html" style ="text-decoration: none;">🌸 예제 8</a></td>
+            <td><a href="./day02/ex02-09.html" style ="text-decoration: none;">🍒 예제 9</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day02/ex02-09a1.html" style ="text-decoration: none;">🧐 예제 9 과제 1</a></td>
+            <td><a href="./day02/ex02-09a2.html" style ="text-decoration: none;">🤓 예제 9 과제 2</a></td>
+            <td></td>
+        </tr>
+    </table>`,
+        day03: `<h1>🐥 3일차 🐔</h1>
+            <table>
+        <tr>
+            <td><a href="./day03/ex03-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+            <td><a href="./day03/ex03-01a1.html" style ="text-decoration: none;">🧐 예제 1 과제 1</a></td>
+            <td><a href="./day03/ex03-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day03/ex03-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+            <td><a href="./day03/ex03-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+            <td><a href="./day03/ex03-04a1.html" style ="text-decoration: none;">🤓 예제4 과제 1</a></td>
+        </tr>
+    </table>`,
+        day04: `<h1>🐔 4일차 🐦</h1>
+        <table>
+        <tr>
+            <td><a href="./day04/ex04-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+            <td><a href="./day04/ex04-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+            <td><a href="./day04/ex04-02.css" style ="text-decoration: none;">✨ 예제 2 CSS</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day04/ex04-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+            <td><a href="./day04/ex04-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+            <td><a href="./day04/ex04-05.html" style ="text-decoration: none;">🌸 예제 5</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day04/ex04-06.html" style ="text-decoration: none;">🍒 예제 6</a></td>
+            <td><a href="./day04/ex04-06a.html" style ="text-decoration: none;">🧐 예제 6 과제 1</a></td>
+            <td><a href="./day04/ex04-06b.html" style ="text-decoration: none;">🤓 예제 6 과제 2</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day04/ex04-06c.html" style ="text-decoration: none;">🥸 예제 6 과제 3</a></td>
+            <td><a href="./day04/ex04-07.html" style ="text-decoration: none;">🌸 예제 7</a></td>
+            <td><a href="./day04/ex04-08.html" style ="text-decoration: none;">🍒 예제 8</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day04/ex04-09.html" style ="text-decoration: none;">🌸 예제 9</a></td>
+            <td><a href="./day04/ex04-10.html" style ="text-decoration: none;">🍒 예제 10</a></td>
+            <td></td>
+        </tr>
+    </table>`,
+        day05: `<h1>🐦 5일차 🦚</h1>
+            <table>
+        <tr>
+            <td><a href="./day05/ex05-01.html" style ="text-decoration: none;">🌸 예제 1</td>
+            <td><a href="./day05/ex05-02.html" style ="text-decoration: none;">🍒 예제 2</td>
+            <td><a href="./day05/ex05-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day05/ex05-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+            <td><a href="./day05/ex05-05.html" style ="text-decoration: none;">🌸 예제 5</a></td>
+            <td><a href="./day05/ex05-06.html" style ="text-decoration: none;">🍒 예제 6</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day05/ex05-07.html" style ="text-decoration: none;">🌸 예제 7</a></td>
+            <td><a href="./day05/ex05-08.html" style ="text-decoration: none;">🍒 예제 8</a></td>
+            <td><a href="./day05/ex05-08a.html" style ="text-decoration: none;">🧐 예제 8 과제 1</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day05/ex05-09.html" style ="text-decoration: none;">🌸 예제 9</a></td>
+            <td><a href="./day05/ex05-09a.html" style ="text-decoration: none;">🧐 예제 9 과제 1</a></td>
+            <td><a href="./day05/ex05-09b.html" style ="text-decoration: none;">🤓 예제 9 과제 2</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day05/ex05-10.html" style ="text-decoration: none;">🍒 예제 10</a></td>
+            <td><a href="./day05/ex05-10a.html" style ="text-decoration: none;">🧐 예제 10 과제 1</a></td>
+            <td><a href="./day05/ex05-10b.html" style ="text-decoration: none;">🤓 예제 10 과제 2</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day05/ex05-11.html" style ="text-decoration: none;">🌸예제 11</a></td>
+            <td><a href="./day05/ex05-11a.html" style ="text-decoration: none;">🧐 예제 11 과제 1</a></td>
+            <td><a href="./day05/ex05-12.html" style ="text-decoration: none;">🍒 예제 12</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day05/ex05-13.html" style ="text-decoration: none;">🌸예제 13</a></td>
+            <td><a href="./day05/ex05-13a.html" style ="text-decoration: none;">🧐 예제 13 과제 1</a></td>
+            <td><a href="./day05/ex05-14.html" style ="text-decoration: none;">🍒 예제 14</a></td>
+        </tr>
+    </table>`,
+        day06: `<h1>🦚 6일차 🌈</h1>
+                <table>
+        <tr>
+            <td><a href="./day06/ex06-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+            <td><a href="./day06/ex06-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+            <td><a href="./day06/ex06-02a.html" style ="text-decoration: none;">🧐 예제 2 과제 1</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day06/ex06-02b.html" style ="text-decoration: none;">🤓 예제 2 과제 2</a></td>
+            <td><a href="./day06/ex06-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+            <td><a href="./day06/ex06-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day06/ex06-04a.html" style ="text-decoration: none;">🧐 예제 4 과제 1</a></td>
+            <td><a href="./day06/ex06-05.html" style ="text-decoration: none;">🌸 예제 5</a></td>
+            <td><a href="./day06/ex06-05a.html" style ="text-decoration: none;">🧐 예제 5 과제 1</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day06/ex06-06.html" style ="text-decoration: none;">🍒 예제 6</a></td>
+            <td><a href="./day06/ex06-07.html" style ="text-decoration: none;">🌸 예제 7</a></td>
+            <td><a href="./day06/ex06-08.html" style ="text-decoration: none;">🍒 예제 8</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day06/ex06-08a.html" style ="text-decoration: none;">🧐 예제 8 과제 1</a></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>`,
+        day07: `<h1>🌈 7일차 🎇</h1>
+                <table>
+        <tr>
+            <td><a href="./day07/ex07-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+            <td><a href="./day07/ex07-01a.html" style ="text-decoration: none;">🧐 예제 1 과제 1</a></td>
+            <td><a href="./day07/ex07-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day07/ex07-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+            <td><a href="./day07/ex07-03a.html" style ="text-decoration: none;">🧐 예제 3 과제 1</a></td>
+            <td><a href="./day07/ex07-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day07/ex07-04a.html" style ="text-decoration: none;">🧐 예제 4 과제 1</a></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table></p>`,
+        day08: `<h1>🎇 8일차 🌠</h1>
+    <table>
+    <tr>
+        <td><a href="./day08/ex08-00.html" style ="text-decoration: none;">🥸 참고</a></td>
+        <td><a href="./day08/ex08-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+        <td><a href="./day08/ex08-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day08/ex08-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+        <td><a href="./day08/ex08-03a.html" style ="text-decoration: none;">🥸 예제 3 참고 1</a></td>
+        <td><a href="./day08/ex08-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day08/ex08-05.html" style ="text-decoration: none;">🌸 예제 5</a></td>
+        <td><a href="./day08/ex08-06.html" style ="text-decoration: none;">🍒 예제 6</a></td>
+        <td><a href="./day08/ex08-07.html" style ="text-decoration: none;">🌸 예제 7</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day08/ex08-08.html" style ="text-decoration: none;">🍒 예제 8</a></td>
+        <td><a href="./day08/ex08-08a.html" style ="text-decoration: none;">🥸 예제 8 참고 1</a></td>
+        <td><a href="./day08/ex08-08b.html" style ="text-decoration: none;">🥸 예제 8 참고 2</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day08/ex08-09.html" style ="text-decoration: none;">🌸 예제 9</a></td>
+        <td><a href="./day08/ex08-10.html" style ="text-decoration: none;">🍒 예제 10</a></td>
+        <td><a href="./day08/ex08-11.html" style ="text-decoration: none;">🌸 예제 11</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day08/ex08-11a(동아리숙제).html" style ="text-decoration: none;">😎 예제 11 동아리 숙제 !!</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>`,
+        day09: `<h1>🌠 9일차 🌌</h1>
+    <table>
+    <tr>
+        <td><a href="./day09/ex09-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+        <td><a href="./day09/ex09-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+        <td><a href="./day09/ex09-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day09/ex09-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+        <td><a href="./day09/ex09-04a.html" style ="text-decoration: none;">🧐 예제 4 과제 1</a></td>
+        <td><a href="./day09/ex09-05.html" style ="text-decoration: none;">🌸 예제 5</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day09/ex09-05a.html" style ="text-decoration: none;">🧐 예제 5 과제 1</a></td>
+        <td><a href="./day09/ex09-06.html" style ="text-decoration: none;">🍒 예제 6</a></td>
+        <td><a href="./day09/ex09-07.html" style ="text-decoration: none;">🌸 예제 7</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day09/ex09-08.html" style ="text-decoration: none;">🍒 예제 8</a></td>
+        <td><a href="./day09/ex09-08a.html" style ="text-decoration: none;">🧐 예제 8 과제 1</a></td>
+        <td><a href="./day09/ex09-09.html" style ="text-decoration: none;">🌸 예제 9</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day09/ex09-10.html" style ="text-decoration: none;">🍒 예제 10</a></td>
+        <td><a href="./day09/ex09-10.html" style ="text-decoration: none;"></a></td>
+        <td><a href="./day09/ex09-11.html" style ="text-decoration: none;"></a></td>
+    </tr>
+    </table>`,
+        day10: `<h1>🌌 10일차 🚀</h1>
+    <table>
+    <tr>
+        <td><a href="./day10/ex10-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+        <td><a href="./day10/ex10-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+        <td><a href="./day10/ex10-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day10/ex10-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+        <td><a href="./day10/ex10-05a.html" style ="text-decoration: none;">🧐 예제 5 과제 1</a></td>
+        <td><a href="./day10/ex10-05b.html" style ="text-decoration: none;">🤓 예제 5 과제 2</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day10/ex10-05c.html" style ="text-decoration: none;">🧐 예제 5 과제 3</a></td>
+        <td><a href="./day10/ex10-06.html" style ="text-decoration: none;">🍒 예제 6</a></td>
+        <td><a href="./day10/ex10-07.html" style ="text-decoration: none;">🌸 예제 7</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day10/ex10-08.html" style ="text-decoration: none;">🍒 예제 8</a></td>
+        <td><a href="./day10/ex10-09.html" style ="text-decoration: none;">🌸 예제 9</a></td>
+        <td><a href="./day10/ex10-09a.html" style ="text-decoration: none;">🧐 예제 9 과제 1</a></td>
+    </tr>
+    </table>`,
+        day11: `<h1>🚀 11일차 🛰️</h1>
+    <table>
+    <tr>
+        <td><a href="./day11/ex11-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+        <td><a href="./day11/ex11-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+        <td><a href="./day11/ex11-02a.html" style ="text-decoration: none;">🧐 예제 2 과제 1</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day11/ex11-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+        <td><a href="./day11/ex11-03a.html" style ="text-decoration: none;">🧐 예제 3 과제 1</a></td>
+        <td><a href="./day11/ex11-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day11/ex11-04a.html" style ="text-decoration: none;">🤓 예제 4 과제 2</a></td>
+        <td><a href="./day11/ex11-05.html" style ="text-decoration: none;">🌸 예제 5</a></td>
+        <td><a href="./day11/ex11-05a.html" style ="text-decoration: none;">🧐 예제 5 과제 1</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day11/ex11-05b.html" style ="text-decoration: none;">🤓 예제 5 과제 2</a></td>
+        <td><a href="./day11/ex11-06a.html" style ="text-decoration: none;">🧐 예제 6 과제 1</a></td>
+        <td><a href="./day11/ex11-06b.html" style ="text-decoration: none;">🤓 예제 6 과제 2</a></td>
+        </tr>
+        <tr>
+            <td><a href="./day11/ex11-06c.html" style ="text-decoration: none;">🧐 예제 6 과제 3</a></td>
+        <td><a href="./day11/ex11-06c(해설).html" style ="text-decoration: none;">🥸 예제 9 과제 3 해설</a></td>
+        <td><a href="./day11/ex11-06d.html" style ="text-decoration: none;">🤓 예제 6 과제 4</a></td>
+    </tr>
+    </table>`,
+        day12: `<h1>🛰️ 12일차 🌕</h1>
+    <table>
+    <tr>
+        <td><a href="./day12/ex12-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+        <td><a href="./day12/ex12-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+        <td><a href="./day12/ex12-02a.html" style ="text-decoration: none;">🧐 예제 2 과제 1</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day12/ex12-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+        <td><a href="./day12/ex12-03a.html" style ="text-decoration: none;">🧐 예제 3 과제 1</a></td>
+        <td><a href="./day12/ex12-03b.html" style ="text-decoration: none;">🤓 예제 3 과제 2</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day12/ex12-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+        <td><a href="./day12/ex12-04.js" style ="text-decoration: none;">✨ 예제 4 자바스크립트</a></td>
+        <td><a href="./day12/ex12-04a.html" style ="text-decoration: none;">🧐 예제 4 과제 1</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day12/ex12-04a.js" style ="text-decoration: none;">✨ 예제 4 과제 1 자바스크립트</a></td>
+        <td><a href="./day12/ex12-05.html" style ="text-decoration: none;">🌸 예제 5</a></td>
+        <td><a href="./day12/ex12-05a.html" style ="text-decoration: none;">🧐 예제 5 과제 1</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day12/ex12-05b.html" style ="text-decoration: none;">🤓 예제 5 과제 2</a></td>
+        <td><a href="./day12/ex12-06.html" style ="text-decoration: none;">🍒 예제 6</a></td>
+        <td><a href="./day12/ex12-06a.html" style ="text-decoration: none;">🧐 예제 6 과제 1</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day12/ex12-06a.js" style ="text-decoration: none;">✨ 예제 6 과제 1 자바스크립트</a></td>
+        <td><a href="./day12/ex12-06b.html" style ="text-decoration: none;">🤓 예제 6 과제 2</a></td>
+        <td><a href="./day12/ex12-07.html" style ="text-decoration: none;">🌸 예제 7</a></td>
+    </tr>    
+    <tr>
+        <td><a href="./day12/ex12-07a.html" style ="text-decoration: none;">🧐 예제 7 과제 1</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>`,
+        day13: `<h1>🛰️ 13일차 🌕</h1>
+    <table>
+    <tr>
+        <td><a href="./day13/ex13-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+        <td><a href="./day13/ex13-01a.html" style ="text-decoration: none;">🧐 예제 1 과제 1</a></td>
+        <td><a href="./day13/ex13-01b.html" style ="text-decoration: none;">🤓 예제 1 과제 2</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day13/ex13-01c.html" style ="text-decoration: none;">🧐 예제 3 과제 3</a></td>
+        <td><a href="./day13/ex13-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+        <td><a href="./day13/ex13-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day13/ex13-03a.html" style ="text-decoration: none;">🧐 예제 3 과제 1</a></td>
+        <td><a href="./day13/ex13-03b.html" style ="text-decoration: none;">🤓 예제 3 과제 2</a></td>
+        <td><a href="./day13/ex13-03c.html" style ="text-decoration: none;">🧐 예제 3 과제 3</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day13/ex13-03d(과제).js" style ="text-decoration: none;">🤓 예제 3 과제 4</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>`,
+        day14: `<h1>🌕 14일차 🧑‍🚀</h1>
+    <table>
+    <tr>
+        <td><a href="./day14/ex14-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+        <td><a href="./day14/ex14-01a.html" style ="text-decoration: none;">🧐 예제 1 과제 1</a></td>
+        <td><a href="./day14/ex14-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day14/ex14-02a.html" style ="text-decoration: none;">🧐 예제 2 과제 1</a></td>
+        <td><a href="./day14/ex14-03.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+        <td><a href="./day14/ex14-03a.html" style ="text-decoration: none;">🧐 예제 3 과제 1</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day14/ex14-03b.html" style ="text-decoration: none;">🤓 예제 3 과제 2</a></td>
+        <td><a href="./day14/ex14-03c.html" style ="text-decoration: none;">🧐 예제 3 과제 3</a></td>
+        <td><a href="./day14/ex14-04.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day14/ex14-04a.html" style ="text-decoration: none;">🧐 예제 4 과제 1</a></td>
+        <td><a href="./day14/ex14-04b.html" style ="text-decoration: none;">🤓 예제 4 과제 2</a></td>
+        <td><a href="./day14/ex14-04b(해설).html" style ="text-decoration: none;">🥸 예제 4 과제 2 해설</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day14/ex14-04c.html" style ="text-decoration: none;">🧐 예제 4 과제 3</a></td>
+        <td><a href="./day14/ex14-04d.html" style ="text-decoration: none;">🤓 예제 4 과제 4</a></td>
+        <td><a href="./day14/ex14-05.html" style ="text-decoration: none;">🌸 예제 5</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day14/ex14-06.html" style ="text-decoration: none;">🍒 예제 6</a></td>
+        <td><a href="./day14/ex14-07.html" style ="text-decoration: none;">🌸 예제 7</a></td>
+        <td></td>
+    </tr>
+    </table>`,
+        day15: `<h1>🧑‍🚀 15일차 ☄️</h1>
+    <table>
+    <tr>
+        <td><a href="./day15/ex15-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+        <td><a href="./day15/ex15-02.html" style ="text-decoration: none;">🍒 예제 2</a></td>
+        <td><a href="./day15/ex15-02a_chart.html" style ="text-decoration: none;">📊 예제 2 차트</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day15/ex15-02a.html" style ="text-decoration: none;">🧐 예제 2 과제 1</a></td>
+        <td><a href="./day15/ex15-02b.html" style ="text-decoration: none;">🤓 예제 2 과제 2</a></td>
+        <td>🧐 예제 3 과제 1</a></td>
+    </tr>
+    </table>`,
+        day16: `<h1>☄️ 16일차 👾</h1>
+    <table>
+    <tr>
+        <td><a href="./day16/ex16-01.html" style ="text-decoration: none;">🌸 예제 1</a></td>
+        <td><a href="./day16/ex16-01(해설 다른버전~).html" style ="text-decoration: none;">🧐 예제 1 과제 1</a></td>
+        <td><a href="./day16/ex16-01(해설!!).html" style ="text-decoration: none;">🍒 예제 2</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day16/ex16-01a.html" style ="text-decoration: none;">🧐 예제 2 과제 1</a></td>
+        <td><a href="./day16/ex16-02.html" style ="text-decoration: none;">🌸 예제 3</a></td>
+        <td><a href="./day16/ex16-02a.html" style ="text-decoration: none;">🧐 예제 3 과제 1</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day16/ex16-02b.html" style ="text-decoration: none;">🤓 예제 3 과제 2</a></td>
+        <td><a href="./day16/ex16-02c.html" style ="text-decoration: none;">🧐 예제 3 과제 3</a></td>
+        <td><a href="./day16/ex16-02d.html" style ="text-decoration: none;">🍒 예제 4</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day16/ex16-02e.html" style ="text-decoration: none;">🧐 예제 4 과제 1</a></td>
+        <td><a href="./day16/ex16-02f.html" style ="text-decoration: none;">🤓 예제 4 과제 2</a></td>
+        <td><a href="./day16/ex16-03.html" style ="text-decoration: none;">🥸 예제 4 과제 2 해설</a></td>
+    </tr>
+    <tr>
+        <td><a href="./day16/ex16-03a.html" style ="text-decoration: none;">🧐 예제 4 과제 3</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>`,
+        day17: `<h1>Day 03 내용</h1><p>계속해서 열공~ 💪</p>`,
+        day17: `<h1>Day 03 내용</h1><p>계속해서 열공~ 💪</p>`,
+        day17: `<h1>Day 03 내용</h1><p>계속해서 열공~ 💪</p>`,
+
+    };
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // 기본 a태그 이동 막기
+            const day = link.getAttribute('data-day');
+            main.innerHTML = dayContents[day] || `<h1>${day}</h1><p>아직 준비 중인 내용이에요~ 🛠️</p>`;
+        });
+    });
+
+    // ✅ Home 버튼 클릭 시 초기 내용으로 되돌리기!
+    homeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        main.innerHTML = initialMainContent;
+    });
+
+</script>
+
+</html>

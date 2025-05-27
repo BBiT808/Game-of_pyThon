@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let dice = (i = 0);
+        const diceCount = [0,0,0,0,0,0]
+            const gameEnd = 10 * 1000 ; //프로그래머들은 계산의 효율을 위해 1000씩 끊는대~
+
+            while(i < gameEnd) {
+                const array = new Uint8Array(1); // 배열을 몇 개 만들 것인가 정해줘야 함 !!
+                    crypto.getRandomValues(array)
+                    dice = (array[0] % 6) + 1;
+
+                if(dice ==1){
+                    diceCount[0]++;
+                } else if(dice ==2){
+                    diceCount[1]++;
+                } else if(dice ==3){
+                    diceCount[2]++;
+                } else if(dice ==4){
+                    diceCount[3]++;
+                } else if(dice ==5){
+                    diceCount[4]++;
+                } else if(dice ==6){
+                    diceCount[5]++;  //정확하게 하려면 else로 넣지 않고 else if로 넣어주는 게 좋다 !
+                }
+                i ++;
+            }
+            console.log(diceCount);
+            let sumDice = 0; // 이렇게 변수를 먼저 선언한 후 포문을 작성해야 함!!
+                for (let j = 0; j<=5; j++ ) {
+                    sumDice += diceCount[j] 
+                };
+            console.log(sumDice);
+    </script>
+</head>
+<body>
+    <h1>🎲주사위 10000번 째 굴리는 중 . . .🎲</h1>
+    <h2 id = "disp"> 로 딩 중 .  .  .</h2> <!-- 요렇게 하면 로딩중 글자를 표시할 수 있어 !!! -->
+    <h3 id = "verif">분 석 중 . . .</h3>
+
+
+
+    <script>
+        const h2 = document.querySelector("#disp"); //요로코롬 아이디를 특정해서 할 수도 있대~
+        setTimeout(() => {
+            h2.textContent = `${diceCount}`;
+        }, 2000);
+
+        const h3 = document.querySelector("#verif");
+        setTimeout(() => {
+            h3.textContent = `${sumDice}회 검증 완료`;
+        }, 4000);
+
+        // h2.innerHTML = `${diceCount}`;  
+        // document.body.innerHTML = `<h1>${diceCount}</h1>`;  // 표시하는 여러가지 방법이 있어~
+    </script>
+</body>
+</html>

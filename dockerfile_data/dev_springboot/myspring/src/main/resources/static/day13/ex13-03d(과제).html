@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          display : flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+        table {
+          box-shadow: 10px 10px 20px #ccc;
+          min-width: 200px;
+          margin: auto;
+          text-align: center;
+        }
+        th,
+        tr,
+        td {
+          padding: 5px 10px;
+          background-color: rgb(251, 255, 196);
+        }
+        tr:nth-of-type(even) td {
+          background-color: rgb(198, 252, 185);
+        }
+      </style>
+</head>
+<body>
+    <script>
+      const line = prompt("한 줄에 앉을 인원을 입력하세요 !");
+      const num = prompt("총 인원을 입력하세요 !");
+      const row = ~~(num / line) + 1;
+      let list = `<table><tr><caption>자리 배치도 </caption></tr>`;
+
+    let person = 1;  // 인원 카운트 (1번부터 시작)
+    for (let r = 0; r < row; r++) {
+        list += `<tr>`;
+  
+   for (let n = 0; n < line; n++) {
+        if (person <= num) {
+            list += `<td>${person}</td>`;
+            person++;
+        } else {
+            list += `<td></td>`;  // 남는 칸은 빈 칸으로
+        }
+    }
+    list += `</tr>`;
+    }
+    list += `</table>`;
+    document.body.innerHTML = list;
+    </script>
+</body>
+</html>

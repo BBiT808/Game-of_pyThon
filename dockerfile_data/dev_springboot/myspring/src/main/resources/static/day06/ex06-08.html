@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소선택자</title>
+    <style>
+        p:first-child{
+            color: violet
+        }
+        p:first-child:after{
+             content: "  므니";
+             color : rgb(200, 238, 142);
+        }
+        p:before{
+            content:"🍀";
+        }
+        p:nth-child(2){
+            color : rgb(195, 230, 100);
+            background-color: lightgoldenrodyellow;
+            display : inline;
+        }
+        p:nth-last-of-type(2)::after {
+            content: " 메로나! 🍈";
+            color: rgb(129, 197, 40);
+        }
+        p:last-of-type::after{
+            content:" 감사합니다!! ^_^";
+            color : rgba(105, 78, 37, 0.788);
+            background-color: rgb(216, 255, 219);
+        }
+    </style>
+</head>
+<body>
+    <p>나의 사랑</p>
+    <p>나의 가족</p>
+    <p>행복한 미래</p>
+    <p>올 때</p>
+    <p> 이제 끝 !</p>
+    <hr />
+    <h3 style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></h3>
+    
+</body>
+</html>

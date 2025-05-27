@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(255, 250, 205, 0.308);
+            padding: 30px;
+            margin: 0;
+        }
+        h2 {
+            text-align: center;
+        }
+
+        .planner{
+            border : 3px solid rgb(255, 190, 207);
+            max-width: 500px;
+            margin: auto;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0 10px 20px #ddd;
+            overflow: hidden;
+        }
+        .hour-block {
+            display: flex;
+            gap : 10px;
+            border : 1px solid #ccc;
+        }
+        .time {
+            width: 80px;
+            background-color: rgb(255, 226, 227);
+            text-align: center;
+            line-height: 30px;
+            font-weight: 400px;
+        }
+        .task{
+            flex-grow: 1;
+            padding: 15px;
+            background-color: white;
+        }
+        .hour-block:hover .task{
+            background-color: rgba(255, 182, 193, 0.486);
+        }
+        .hour-block:hover .time{
+            background-color: rgba(255, 227, 208, 0.575);
+            color: white;
+        }
+        .hour-block:last-of-type {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- h2+div.planner>(div.hour-block>div.time{0$:00}+div.task{상세 내용})*7 -->
+    <h2>📒 나의 주간 계획표 ^_^ ✏️</h2>
+    <div class="planner">
+        <div class="hour-block">
+            <div class="time">01:00</div>
+            <div class="task">밥 먹기</div>
+        </div>
+        <div class="hour-block">
+            <div class="time">02:00</div>
+            <div class="task">멍 때리기</div>
+        </div>
+        <div class="hour-block">
+            <div class="time">03:00</div>
+            <div class="task">빗소리 감상하기</div>
+        </div>
+        <div class="hour-block">
+            <div class="time">04:00</div>
+            <div class="task">침대 위에서 뒹굴거리기</div>
+        </div>
+        <div class="hour-block">
+            <div class="time">05:00</div>
+            <div class="task">누워 있기</div>
+        </div>
+        <div class="hour-block">
+            <div class="time">06:00</div>
+            <div class="task">숨 쉬기</div>
+        </div>
+        <div class="hour-block">
+            <div class="time">07:00</div>
+            <div class="task">쿠킹덤 길드 토벌전 하기</div>
+        </div>
+    </div>
+</body>
+</html>

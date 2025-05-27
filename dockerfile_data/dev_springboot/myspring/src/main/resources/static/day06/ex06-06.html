@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:first-of-type{
+            border : 1px solid khaki
+        }
+        p:first-child{
+            background-color : lemonchiffon
+        }
+        p:last-child{
+            background-color: rgb(163, 241, 215);
+        }
+        div:last-of-type{
+            border : 1px solid cadetblue;
+        }
+        p:last-of-type{
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <h1>구조적가상클래스!!</h1>
+    <!-- div>p*5{fitst-child 입니다.} -->
+    <div>
+        <p>fitst-child 입니다.</p>
+        <p>fitst-child가 아닙니다.</p>
+        <p>fitst-child가 아닙니다.</p>
+        <p>fitst-child가 아닙니다.</p>
+        <span>테스트입니다 !</span>
+        <p>fitst-child가 아니고, last_child 입니다!</p>
+    </div>
+    <hr />
+    <div>
+        <p>fitst-child 입니다.</p>
+        <p>fitst-child가 아닙니다.</p>
+        <p>fitst-child가 아닙니다.</p>
+        <p>fitst-child가 아닙니다.</p>
+        <p>fitst-child가 아니고, last_child 입니다!</p>
+    </div>
+</body>
+</html>

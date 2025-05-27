@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @font-face {
+        font-family: "myfont";
+        src: url("./fonts/SOYO\ Maple\ Regular.ttf")
+            format("truetype");
+    }
+    /* format("opentype"); OTF 일 때!!*/
+</style>
+<body style = "font-family: myfont">
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <h1> 반응형 웹퍼블리싱 학습 순서 </h1>
+    <!--ol>li{HTML}+li{CSS}>ol>li{ex$}*3^^li>strong{Javascript}+ol>li*4-->
+    <ol>
+        <li style = "color: rgb(142, 185, 153)">HTML</li>
+        <li style = "color: rgb(196, 202, 138)">
+            CSS
+            <ol type = "i" start = "3" , style = "color : initial">
+                <li>ex1</li>
+                <li>ex2</li>
+                <li>ex3</li>
+            </ol>
+        </li>
+        <li value "5">
+            <strong>Javascript</strong>
+            <ol type ="a" start="10"> <!--시작 순서도 지정할 수 있다 !!-->
+                <li>Nodejs</li>
+                <li value = "21">Express</li>
+                <li value = "12">React</li>
+                <li>Vuejs</li>
+            </ol>
+        </li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width :100%;
+            border-collapse: collapse;
+            table-layout : fixed;
+        }
+        th,
+        td{
+            border: 1px solid #ddd;
+            padding : 8px;
+            text-align : center;
+            position : relative;
+            z-index: 1;
+        }
+        thead,
+        tfoot{
+            position : sticky;
+            color : rgb(253, 251, 253);
+            background-color: rgb(223, 203, 255);
+            z-index :5;
+        }
+        thead{
+            top:-1px;
+        }
+        tfoot{
+            bottom: -1px;
+        }
+        .table-wrapper{
+            max-height : 200px;
+            overflow :auto;   
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>직업</th>
+                </tr>
+            </thead>
+            <tbody
+                <tr>
+                    <th>1</th>
+                    <th>홍길동</th>
+                    <th>25</th>
+                    <th>개발자</th>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <th>이순신</th>
+                    <th>30</th>
+                    <th>설계자</th>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <th>강감찬</th>
+                    <th>30</th>
+                    <th>조폭</th>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <th>슈바이처</th>
+                    <th>50</th>
+                    <th>의사</th>
+                </tr>
+            <tr>
+                <th>5</th>
+                <th>마리오</th>
+                <th>22</th>
+                <th>배관공</th>
+            </tr>
+            <tr>
+                <th>6</th>
+                <th>아서</th>
+                <th>33</th>
+                <th>왕</th>
+            </tr>
+            <tr>
+                <th>7</th>
+                <th>핀볼</th>
+                <th>17</th>
+                <th>우주여행사</th>
+            </tr>
+            <tr>
+                <th>8</th>
+                <th>공유</th>
+                <th>17</th>
+                <th>구슬치기</th>
+            </tr>
+            <tr>
+                <th>9</th>
+                <th>고수</th>
+                <th>18</th>
+                <th>비누맛</th>
+            </tr>
+            <tr>
+                <th>10</th>
+                <th>부경대</th>
+                <th>60</th>
+                <th>용산지기</th>
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">테이블풋터</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

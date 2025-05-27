@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교재 p250 !!!</title>
+    <script>
+        // 객체를 선언 !!
+        const student = {}
+        student.이름 = '장원영'
+        student.취미 = '노래'
+        student.장래희망 = '우주대스타'
+
+        // 출력 !!
+        console.log(JSON.stringify(student, null, 2))
+
+        // 속성 제거 !!
+        delete student.장래희망
+
+        // 출력
+        console.log(JSON.stringify(student, null, 2))
+    </script>
+</head>
+<body></body>
+</html>

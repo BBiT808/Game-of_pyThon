@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const show =function() {
+            alert("알림창이 보여집니다.");
+        };
+        const myinfo = function(v) {
+            // return "인사" ;
+            console.log(v.value);
+            console.log(v.id);
+            console.log(v.className);
+            /* ⬆️유사 배열!!!!! */
+            console.log(v.classList);
+            console.log(v.name);
+        };
+    </script>
+</head>
+<body>
+    <button onclick="show()">알림창</button>
+    <button 
+    id ="h-id" 
+    onclick="myinfo(this)" 
+    value = "hello" 
+    name ="okok"
+    class="btn test good !">myinfo</button>
+    <!-- 정보를 알고 싶은 것에 this를 넣고, 누르면 this에 담은 값을 호출함! -->
+</body>
+</html>

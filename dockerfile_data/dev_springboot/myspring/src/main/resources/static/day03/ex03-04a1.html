@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+        font-family: "myfont";
+        src: url("./fonts/NanumSquareNeo-bRg.ttf")
+            format("truetype");
+    }
+    </style>
+</head>
+<body style = "background-color : rgb(249, 255, 243);
+              font-family: myfont;">
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <h1>프런트엔드 개발자 지원서</h1>
+    <h3 style = "font-style: italic;"><mark style="color: rgb(90, 134, 6);">HTML, CSS, 자바스크립트</mark>의 기술을 이해하고 <mark style="color: rgb(90, 134, 6);">실무 경험</mark>이 있는 분을 찾습니다 !</h3>
+    <hr />
+    <form>
+    <fieldset>
+    <h4>개인 정보</h4>
+    <ul>
+        <li type = "none"><label for="name">이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type = "text" id="name" placeholder="공백 없이 입력하세요." required><br /></li>
+    <li type = "none"><label for="phone">연락처&nbsp;</label>
+    <!--코파일럿의 도움을 받아 숫자 패턴을 조정했음 !!-->
+    <input type="tel" pattern="010-[0-9]{4}-[0-9]{4}" id="phone" required placeholder="010-9999-9999 형식!" /></li>
+    </ul>
+    <h4>지원 분야</h4>
+    <!--라디오 버튼 하나만 선택하게 하고 싶으면 name을 통일하면 된다 !!-->
+    <ul>
+        <li type = "none"></li><input type = "radio" name = "apply" id="web" />
+            <label for="web">웹 퍼블리싱</label><br /></li>
+        <li type = "none"><input type = "radio" name="apply" id="app"/>
+            <label for="app">웹 애플리케이션 개발</label><br /></li>
+        <li type = "none"><input type = "radio" name="apply" id="env"/>
+            <label for="env">개발 환경 개선</label></li>
+    </ul>
+    <h4>지원 동기</h4>
+    <ul>
+        <li type = "none"><label for="moti"></label><textarea
+            style = "font-family: myfont;"
+            name = ""
+            id = ""
+            cols = "60"
+            rows ="5"
+            placeholder="본사 지원 동기를 간략히 써 주세요!"
+            style = "resize : none"
+            ></textarea><br />
+            <button type="submit">접수하기</button>
+            <button type="reset">다시 쓰기</button></li>
+    </ul>
+</fieldset>
+</form>
+</body>
+</html>

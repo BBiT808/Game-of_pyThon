@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:100px;
+            height: 100px;
+            background-color: rgb(251, 126, 255);
+            animation: mymove 2s  alternate infinite ease;
+            border-radius: 50%;
+            border : 3px #ccc;
+            transition: transform 3s ease-in-out;
+            animation: mymove 2s alternate infinite ease;
+        }
+        @keyframes mymove{
+            /* from{
+                transform: translate(0);
+            }
+            to {
+                transform: translate(500px);
+            } */
+             /* 10%{
+                transform: translate(0);
+             }
+
+            25%{transform: translate(50px, 500px);}
+
+            60%{
+                transform: translate(100px, 0);
+             }
+            80%{transform: translate(50px, 500px);} */
+            0%{
+                top :0px;
+            }
+            95%{
+                width :100px;
+            }
+            to{
+                top:600px;
+                width:115px;
+                height:80px;
+            }
+             
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

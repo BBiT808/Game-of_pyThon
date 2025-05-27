@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let dice = (i = d1 = d2 = d3 = d4 = d5 = d6 = 0);
+            const gameEnd = 10 * 1000 ; //프로그래머들은 계산의 효율을 위해 1000씩 끊는대~
+
+            while(i < gameEnd) {
+                const array = new Uint8Array(1); // 배열을 몇 개 만들 것인가 정해줘야 함 !!
+                    crypto.getRandomValues(array)
+                    dice = (array[0] % 6) + 1
+
+                if(dice ==1){
+                    d1++;
+                } else if(dice ==2){
+                    d2++;
+                } else if(dice ==3){
+                    d3++;
+                } else if(dice ==4){
+                    d4++;
+                } else if(dice ==5){
+                    d5++;
+                } else if(dice ==6){
+                    d6++;  //정확하게 하려면 else로 넣지 않고 else if로 넣어주는 게 좋다 !
+                }
+                i ++;
+            }
+            console.log([d1,d2,d3,d4,d5,d6]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

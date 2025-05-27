@@ -1,0 +1,71 @@
+<!-- 20250519 자바스크립트 음... 한 5번째 수업? ㅎ.... 기억이 안나 !!!!!!그치만 71번째 수업이더라고!! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주 사 위 굴 리 기</title>
+    <style>
+        table {
+            width: 400px;
+        }
+        th,
+        tr,
+        td {
+            background-color: rgba(255, 250, 205, 0.479);
+            padding: 10px;
+            font-weight: 500;
+            text-align: center;
+        }
+        th {
+            background-color: rgb(221, 148, 221);
+        }
+        /* div {
+            display: flex;
+            flex-direction: column;
+        } */
+    </style>
+</head>
+<body>
+    <script>
+        let list = ""; // 최종 출력!!!!
+        let epoch = 10000 //횟수
+
+        // 배열에 넣어줘야 하니까 먼저 배열을 하나 만들어 주자!!
+        const arr = [0,0,0,0,0,0];
+
+            for (let i =0; i < epoch; i++) {
+                const ran = Math.floor(Math.random()*6)
+                arr[ran] ++
+                }
+        list+=`    <table border = "1">`
+        list+=`    <tr>`
+         list+=`        <th>1번</th>`
+         list+=`        <th>2번</th>`
+         list+=`        <th>3번</th>`
+         list+=`        <th>4번</th>`
+         list+=`        <th>5번</th>`
+         list+=`        <th>6번</th>`
+        list+=`    </tr>`
+        list+=`    <tr>`
+         list+=`        <td>${arr[0]}</td>`
+         list+=`        <td>${arr[1]}</td>`
+         list+=`        <td>${arr[2]}</td>`
+         list+=`        <td>${arr[3]}</td>`
+         list+=`        <td>${arr[4]}</td>`
+         list+=`        <td>${arr[5]}</td>`
+        list+=`    </tr>`
+        list+=`</table>` ;
+        
+        
+        list += `<p>1번 : ${((arr[0] / epoch)*100).toFixed(2)}%&emsp;
+                    2번 : ${((arr[1] / epoch)*100).toFixed(2)}%&emsp;
+                    3번 : ${((arr[2] / epoch)*100).toFixed(2)}%&emsp;
+                    4번 : ${((arr[3] / epoch)*100).toFixed(2)}%&emsp;
+                    5번 : ${((arr[4] / epoch)*100).toFixed(2)}%&emsp;
+                    6번 : ${((arr[5] / epoch)*100).toFixed(2)}%</p>`
+       
+    document.body.innerHTML = list;        
+    </script>
+</body>
+</html>

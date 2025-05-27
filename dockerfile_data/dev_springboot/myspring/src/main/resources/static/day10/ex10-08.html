@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            margin: 0;
+            background-color: rgb(255, 250, 230);
+            padding: 2rem;
+            display: flex;
+            /* justify-content: center; */
+
+        }
+        .chat-container{
+            width: 600px;
+            height: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px #ccc;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            transform: translateY(50%);
+        }
+        .message{
+            display: flex;
+            margin-bottom: 1.2rem;
+            align-items: end;
+        }
+        .message.bot{
+            justify-content: start;
+        }
+        .message.user {
+            justify-content: end;
+        }
+        /* .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        } */
+        .bubble {
+            width : 300px;
+            position : relative;
+            background-color: lightpink;
+            padding : 0.7rem 1.5rem;
+            border-radius: 20px;
+            word-break: break-word;
+        }
+        .name {
+            font-size: 0.8rem;
+            color : #555;
+            margin : 0 10px 2px
+        }
+        .bot .bubble {
+            background-color: rgba(240, 128, 128, 0.753);
+        }
+        .user .name {
+            text-align: right;
+        }
+        .chat-container::-webkit-scrollbar{
+            background-color: rgba(255, 182, 193, 0.151);
+        }
+        .chat-container::-webkit-scrollbar-thumb:active{
+            background-color: rgb(255, 226, 226);
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.chat-container>div.message.bot>div.avatar>div.name{myBot}+div.bubble{안녕하세요. 무엇을 도와드릴까요?}^^div.message.user>div>div.name{나}+div.bubble{Flex로 채팅화면을 만들수 있냐?} -->
+    <div class="chat-container">
+        <div class="message bot">
+            <div class="avatar">
+                <div class="name">myBot</div>
+                <div class="bubble">안녕하세요. 무엇을 도와드릴까요?</div>
+            </div>
+        </div>
+        <div class="message user">
+            <div>
+                <div class="name">나</div>
+                <div class="bubble">집에 가고 싶어요.</div>
+            </div>
+        </div>
+        <div class="message bot">
+            <div class="avatar">
+                <div class="name">myBot</div>
+                <div class="bubble">확인할 수 없는 항목입니다.</div>
+            </div>
+        </div>
+        <div class="message user">
+            <div>
+                <div class="name">나</div>
+                <div class="bubble">아니 집에 가고 싶다니까요?</div>
+            </div>
+        </div>
+        <div class="message bot">
+            <div class="avatar">
+                <div class="name">myBot</div>
+                <div class="bubble">확인할 수 없는 항목입니다.</div>
+            </div>
+        </div>
+        <div class="message user">
+            <div>
+                <div class="name">나</div>
+                <div class="bubble">집에 보내 줘 !!!!!!!</div>
+            </div>
+        </div>
+        <div class="message bot">
+            <div class="avatar">
+                <div class="name">myBot</div>
+                <div class="bubble">인식할 수 없는 항목을 "3번" 입력하셨습니다. 채팅창이 5분 잠금됩니다.</div>
+            </div>
+        </div>
+        <div class="message user">
+            <div>
+                <div class="name">나</div>
+                <div class="bubble" style="color: gray;">크아아아아악 집에 가고 싶다구</div>
+            </div>
+        </div>
+        <div class="message user">
+            <div>
+                <div class="name">나</div>
+                <div class="bubble" style="color: gray;">여보세요!! 제 말 들려요 ?!</div>
+            </div>
+        </div>
+        <div class="message user">
+            <div>
+                <div class="name">나</div>
+                <div class="bubble" style="color: gray;">저기요.. ~ 아무도 없어요 ..~?</div>
+            </div>
+        </div>
+        
+    </div>
+</html>

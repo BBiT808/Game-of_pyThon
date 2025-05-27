@@ -174,8 +174,11 @@ python3 - m venv venv_main1
 sudo apt install git > git init > 레포지토리 커밋
 
 외부에서
-포크(그팀 온라인 > 내 온라인 > 내 로컬) ; 온라인을 보사 후 클론
+포크(그팀 온라인 > 내 온라인 > 내 로컬) ; 온라인을 복사 후 클론
 클론(내 온라인 > 내 로컬)
+scp -P 223 ./chatbot/* pkteam@mydb.iptime.org:/home/pkteam/data/bot_psc/
+
+------------------------------------------------------------------------------------
 
 history를 치면 지금까지 한 활동이 다 보여짐 !!
 
@@ -192,6 +195,8 @@ cd .ssh  > 암호화키 있는 곳으로 이동!!
 
 #2025.03.06 추가
 scp -P 223 ./M.Cbot_v2/* pkteam@mydb.iptime.org:/hom/pkteam/data/bot_keh/
+
+scp -P 222 D:/keh/code/dockerfile_data/dev_springboot/myspring/target/myspring-0.0.1-SNAPSHOT.jar
 
 >> 이렇게 하면 폴더 내용을 pkteam 서버로 옮길 수 있음 !!
 

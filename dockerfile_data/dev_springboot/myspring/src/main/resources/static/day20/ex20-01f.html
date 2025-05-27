@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교재 p 252 !!!!</title>
+    <script>
+        const obj = {
+            a : function () {
+                console.log(this);
+            },
+            b: () => { // 화살표 함수 !! obj를 뚫고 더 상위를 가리킴!!! ㅇ0ㅇ
+                console.log(this);
+            },
+        };
+
+        obj.a();
+        obj.b();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

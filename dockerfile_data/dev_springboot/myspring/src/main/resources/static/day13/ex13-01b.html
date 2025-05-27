@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <style>
+        div {
+            padding: 0;
+            margin : 30% auto;
+            background: url("https://cdn-icons-png.flaticon.com/512/6727/6727646.png");
+            width: 200px;
+            height: 180px;
+        }
+        .zzi {
+            height: 260px;
+            width: 190px;
+            background-position: 160px 255px ;
+        }
+        .bba {
+            height: 270px;
+            width: 180px;
+            background-position: -170px -125px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const now = dayjs();
+        const random = now.get("ms") % 3;
+        console.log(random);
+
+        if (random == 0) {
+        document.body.innerHTML = `<div class = "muk"></div>`;
+        } else if (random == 1) {
+        document.body.innerHTML = `<div class = "zzi"></div>`;
+        } else {
+        document.body.innerHTML = `<div class = "bba"></div>`;}
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교재 p221 콜백 함수 !!!</title>
+    <script>
+        // 함수를 선언합니다 !! 
+        function callThreeTimes (callback) {
+            for (let i = 0; i<3; i ++) {
+                callback(i)  // callback이라는 매개변수는 함수이므로 호출 가능 !!
+            }
+        }
+
+        function print(i) {
+            console.log(`${i}번째 함수 호출 !`)
+        }
+
+        // 함 수 호 출 !
+        callThreeTimes(print)
+
+        function ccc(cb) {
+            for (let i = 0; i <3 ; i ++) {
+                cb(i);
+            }
+        }
+
+        function pp1(x) {
+            document.writeln(`${x}번째 함수 호출`);
+        }
+        function pp2(x) {
+            document.write(`${x}번째 함수 호출`);
+        }
+        function pp3(x) {
+            console.log(`${x}번째 함수 호출`);
+        }
+
+        ccc(pp3);  // 
+    </script>
+</head>
+<body></body>
+</html>

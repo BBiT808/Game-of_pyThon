@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠키뽑기 해설 !!!!</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(246, 250, 215);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 20px 0 20px 25px;
+            box-sizing: border-box;
+        }
+        #box div{
+            height: 30px;
+            margin: 5px;
+            background-color: rgba(247, 138, 233, 0.918);
+        }
+        table {
+            width: 400px;
+            margin: 100px auto 0;
+        }
+        th,
+        tr,
+        td {
+            background-color: rgba(255, 250, 205, 0.479);
+            padding: 10px;
+            font-weight: 500;
+            text-align: center;
+        }
+        th {
+            background-color: rgb(221, 148, 221);
+        }
+        .btn{
+            width: 400px;
+            margin: 20px auto;
+            text-align : right;
+        }
+        .btn button {
+            padding : 10px;
+            margin : 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- table>(tr>td*3)*2 -->
+    <script>
+        let list = ""; // 최종 출력!!!!
+        let epoch = 10000 //횟수
+        let turn = 0; // 증가값!!
+
+        // 배열에 넣어줘야 하니까 먼저 배열을 하나 만들어 주자!!
+        const arr = [0,0,0,0,0];
+
+        while (turn < epoch) {
+            // 랜덤으로 돌려주고...
+            const ran = Math.floor(Math.random()*100)
+
+            // 확률을 작은 것부터 지정해준 다음에 배열에 인덱스 순서대로 집어 넣어주기!!
+            // 이때, 제일 작은 확률부터 해줘야 if 문이 제대로 들어간다!!
+            if (ran < 0.03) {
+                arr[0]++;
+            } else if (ran < 3.03) {
+                arr[1]++;
+            } else if (ran < 8.03) {
+                arr[2]++;
+            } else if (ran <18.03) {
+                arr[3]++;
+            } else {
+                arr[4]++;
+            }
+            turn++;
+        }
+    list+=`    <table border = "1">`
+    list+=`    <tr>`
+    list+=`        <th>아이템</th>`
+    list+=`        <th>확률</th>`
+    list+=`        <th>개수</th>`
+    list+=`        <th>검증</th>`
+    list+=`    </tr>`
+    list+=`    <tr>`
+    list+=`        <td>비스트</td>`
+    list+=`        <td>0.03%</td>`
+    list+=`        <td>${arr[0]}</td>`
+    list+=`        <td>${Math.floor((arr[0] / epoch)*100).toFixed(10)}%</td>`
+    list+=`    </tr>`
+    list+=`    <tr>`
+    list+=`        <td>슈퍼에픽</td>`
+    list+=`        <td>3%</td>`
+    list+=`        <td>${arr[1]}</td>`
+    list+=`        <td>${Math.floor((arr[1] / epoch)*100).toFixed(2)}%</td>`
+    list+=`    </tr>`
+    list+=`    <tr>`
+    list+=`        <td>에픽</td>`
+    list+=`        <td>5%</td>`
+    list+=`        <td>${arr[2]}</td>`
+    list+=`        <td>${Math.floor((arr[2] / epoch)*100).toFixed(2)}%</td>`
+    list+=`    </tr>`
+    list+=`    <tr>`
+    list+=`        <td>레어</td>`
+    list+=`        <td>10%</td>`
+    list+=`        <td>${arr[3]}</td>`
+    list+=`        <td>${Math.floor((arr[3] / epoch)*100).toFixed(2)}%</td>`
+    list+=`    </tr>`
+    list+=`    <tr>`
+    list+=`        <td>노말</td>`
+    list+=`        <td>81.97%</td>`
+    list+=`        <td>${arr[4]}</td>`
+    list+=`        <td>${Math.floor((arr[4] / epoch)*100).toFixed(2)}%</td>`
+    list+=`    </tr>`
+    list+=`    <tr>`
+    list+=`        <td>검증</td>`
+    list+=`        <td>100%</td>`
+    list+=`        <td>${arr[0] + arr[1] + arr[2] + arr[3] + arr[4]}</td>`
+    list+=`        <td>${Math.floor(((arr[0] + arr[1] + arr[2] + arr[3] + arr[4]) / epoch)*100).toFixed(2)}%</td>`
+    list+=`    </tr>`
+    list+=`    `
+    list+=`</table><div class="btn"><button onclick = "location.reload(true)">새로고침</button><button onclick="alert('쿠키 뽑기 확률입니다!')">팝업</button></div>`
+    list += `<div id="box">`;
+      list += `<div style="width: ${((arr[0] / epoch) * 100).toFixed(
+        10
+      )}%"></div>`;
+      list += `<div style="width: ${((arr[1] / epoch) * 100).toFixed(
+        2
+      )}%"></div>`;
+      list += `<div style="width: ${((arr[2] / epoch) * 100).toFixed(
+        2
+      )}%"></div>`;
+      list += `<div style="width:${((arr[3] / epoch) * 100).toFixed(
+        2
+      )}%"></div>`;
+      list += `<div style="width:${((arr[4] / epoch) * 100).toFixed(
+        2
+      )}%"></div>`;
+      list += `</div>`;
+
+        // list += `누적값은 ${arr}`;
+        document.body.innerHTML = list;
+    </script>
+</body>
+</html>

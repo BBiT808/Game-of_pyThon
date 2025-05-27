@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뭐뭣 게임캐릭터를 만든다고 ?</title>
+    <script>
+        function lol(heroName, level, callback = fire) {
+            document.write("===============================<br>");
+            document.write(`${heroName}님이 ${level} 레벨을 달성했습니다. <br>`);
+            document.write("===============================<br>");
+
+            if(level>=6) {
+                document.write(`${heroName}님이 궁극기를 배웠습니다.<br>`);
+                // callback 기술 쓰기
+                callback(level);
+            } else {
+                document.write(`${heroName}님이 기본 스킬을 씁니다.<br>`);
+            }
+        }
+
+        function fire(ff) {
+            for (let i = 1 ; i< ff + 1; i ++) {
+                document.write(`${ff}렙 이어서 하늘에서 ${i}번째 메테오가 떨어집니다 ! <br>`);
+            }
+        }
+        function ice(ii) {
+            for (let i = 1; i<ii; i++) {
+                document.write(
+                    `${ii}렙 이어서 ${i * 2}번째 얼음 조각이 쏟아집니다 ! <br>`
+                );
+            }
+        }
+        function slow(tt) {
+            for (let i = tt; 0< i; i --) {
+                document.write(
+                    `${tt - i + 1}회 공포를 걸어 이동 속도를 ${i}%로 줄입니다 ! <br>`
+                );
+            }
+        }
+
+        lol("헤카림", 13, slow);
+    </script>
+</head>
+<body></body>
+</html>

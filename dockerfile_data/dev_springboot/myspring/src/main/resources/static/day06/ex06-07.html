@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p:nth-child(3){
+            color : orchid}
+        /* div를 세었기 때문에 2가 된 것임 !!  */
+        p:nth-of-type(3){
+            color : slateblue
+        }
+        p:nth-of-type(odd){
+            background-color: lightcyan;
+        }
+        p:nth-of-type(even){
+            background-color: rgb(223, 252, 165);
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <!-- (div{여기는 세는 곳이 아니예요!}+p{$번째 태그}*2)*3 -->
+    <div>여기는 세는 곳이 아니예요!</div>
+    <p>1번째 태그</p>
+    <p>2번째 태그</p>
+    <div>여기는 세는 곳이 아니예요!</div>
+    <p>3번째 태그</p>
+    <p>4번째 태그</p>
+    <div>여기는 세는 곳이 아니예요!</div>
+    <p>5번째 태그</p>
+    <p>6번째 태그</p>
+</body>
+</html>

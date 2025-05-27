@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=> {
+            let ct = 0;
+            const h1 = document.createElement("h1");
+            document.body.appendChild(h1);
+            h1.innerHTML = "🖱️ 클~ 릭 횟 수 ! 👆 : 0";
+            h1.style.userSelect = "none";
+            h1.addEventListener(
+                "click", 
+                ()=> (h1.textContent = `🖱️ 클~ 릭 횟 수 ! 👆 : ${ct++}`)
+            );
+        });
+    </script>
+</head>
+<body></body>
+</html>

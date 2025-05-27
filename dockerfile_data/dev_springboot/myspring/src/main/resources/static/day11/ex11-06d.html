@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         table {
+             margin: 20px auto;
+             border-collapse: separate;
+             border-spacing: 0;
+             box-shadow: 10px 10px 20px #ccc;
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+      }
+        caption{
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 10px;
+        }
+        tr,td {
+            text-align: center;
+        }
+        tr,
+        td {
+        border: 3px solid rgb(255, 255, 255);
+        padding: 5px 10px;
+        background-color: rgb(205, 255, 207);
+        }
+        tr:nth-of-type(even) td {
+        background-color: rgb(254, 255, 216);
+      }
+      tr:nth-of-type(1){
+        background-color: antiquewhite !important;
+      }
+      tr:not(:first-of-type) td:nth-of-type(3) {
+        color: rgb(61, 170, 61);
+        border: 2px solid rgb(184, 240, 184); 
+        box-shadow: 5px 5px 20px rgba(144, 126, 150, 0.6);
+        position: relative;
+        z-index: 1;}
+      
+    </style>
+    <script>
+      let list = 
+      `  <ul>
+        <li>Hello 반갑다는 뜻이야!</li>
+        <li>Javascript로 작성되었어 !</li>
+    </ul>
+    <table>
+        <caption> && and </caption>
+    <tr>
+        <td>좌변</td>
+        <td>우변</td>
+        <td>결과</td>
+    </tr>
+    <tr>
+        <td>false</td>
+        <td>false</td>
+        <td>${false && false}</td>
+    </tr>
+    <tr>
+        <td>true</td>
+        <td>false</td>
+        <td>${true&&false}</td>
+    </tr>
+    <tr>
+        <td>false</td>
+        <td>true</td>
+        <td>${false&&true}</td>
+    </tr>
+    <tr>
+        <td>true</td>
+        <td>true</td>
+        <td>${true && true}</td>
+    </tr>
+    </table>
+    <table>
+        <caption> || or </caption>
+    <tr>
+        <td>좌변</td>
+        <td>우변</td>
+        <td>결과</td>
+    </tr>
+    <tr>
+        <td>false</td>
+        <td>false</td>
+        <td>${false||false}</td>
+    </tr>
+    <tr>
+        <td>true</td>
+        <td>false</td>
+        <td>${true||false}</td>
+    </tr>
+    <tr>
+        <td>false</td>
+        <td>true</td>
+        <td>${false||true}</td>
+    </tr>
+    <tr>
+        <td>true</td>
+        <td>true</td>
+        <td>${true||true}</td>
+    </tr>
+</table>`;
+      document.write(list);
+    </script>
+</head>
+<body></body>
+</html>

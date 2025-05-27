@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20250507 동아리 과제!</title>
+    <style>
+        body{
+            background : linear-gradient(to right, #d9fdaa,rgba(255, 224, 240, 0.5), #fff7cd);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        button{
+            padding : 20px 60px;
+            position : relative;
+            color: #fff;
+            background-color: rgba(0,0,0,0);
+            border-color: #fff;
+            overflow: hidden;
+            transition: color 1s;
+            font-size: 1.5rem;
+            font-weight: 430;
+        }
+        button::before{
+            content:"";
+            position:absolute;
+            top:0;
+            left:-50px;
+            width:0;
+            height: 100%;
+            background-color: #fff;
+            z-index: -10;
+            transform: skewX(35deg);
+            transition: width 1s;
+        }
+        button:hover{
+            color:#ffb1d8;
+        }
+        button:hover::before{
+            width : 150%;
+        }
+    </style>
+</head>
+<body>
+    <button>둘러보기</button>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포~ 문 연습~</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        // let output = '';
+        // for (let i = 1; i<=7; i++) {
+        //         //챗 지피티한테 한번만 물어봤으 ㅜ.ㅜ 자바스크립트는 문자열 곱셈이 안되네!!!!!
+        //         output += '*'.repeat(i) + '\n';
+        // }
+        // console.log(output)
+
+        let output1 = '';
+        const star = '*';
+        for (let i =1; i<=7; i++){
+            for (let j =1; j<=i; j++){
+                output1 += star;
+            }
+            output1 += '\n';
+        }
+
+        let output2='';
+        for (let k = 1; k <=7; k++){
+            for (let l=7; l>k; l--){
+                output2 += ' ';
+            }
+            for (let n = 1; n<=2*k-1; n++){
+            output2 += '*'
+        }
+            output2 += '\n';
+        }
+        
+        console.log(output1)
+        console.log(output2)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height :200px;
+        }
+        .container {
+            border : 4px solid rgb(247, 161, 247);
+            margin : 50px;
+        }
+        .transformed{
+            background-color: rgba(255, 182, 193, 0.575);
+            border-radius: 10px;
+            transition: transform 1s ease;
+            transition: all 1s ease-in-out;
+            /* transition: all 1s ease-in; */
+            /* transition: all 1s ease-out; */
+            /* transition: all 1s linear; */
+        }
+        .transformed:hover{
+            transform : scale(0.5);
+            /* transform : scale(2); */
+            /* transform : scaleX(0.5); */
+            /* transform : scaleY(0.7); */
+            /* transform : scale(0.7, 1.3); */
+            /* transform : scale(-1.2); */
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- div.container>div.transformed{transformed} -->
+    <div class="container">
+        <div class="transformed">transformed</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: "myfont";
+            src: url("./fonts/나눔손글씨 동화또박.ttf")
+                format("truetype");
+        }
+        :root{
+            --cwidth : 293px;
+            --cheight: 35px;
+        }
+        h2{
+            background-color: rgb(103, 219, 255);
+            width: var(--cwidth);
+            height: var(--cheight);
+            text-align: center;
+            color:whitesmoke;
+            margin-bottom: 3px;
+        }
+        .wrapper{
+            width: var(--cwidth);
+            height: 210px;
+            text-align: center;
+            background-color: rgb(239, 255, 251);
+        }
+        div.wrapper> div[class], 
+        .wrapper>p:first-child,
+        .wrapper>p:nth-last-of-type(1) {
+            width: 30px;
+            height: 30px;
+            border : 3px solid rgb(141, 242, 255);
+            float: left;
+            margin: 3px;
+            font-size: 1.1rem;
+        }
+        .wrapper > p:first-child,
+        .wrapper > p:nth-last-of-type(1),
+        .wrapper > div:nth-of-type(n+1):nth-of-type(-n+2)
+         {
+            border : 3px solid rgb(226, 195, 255)
+        }
+        div:nth-of-type(7n-2) {
+            color :rgb(41, 159, 255)
+        }
+        div:nth-of-type(7n-1) {
+            color :rgb(255, 93, 161)
+        }
+        .wrapper>div:nth-of-type(n+3):nth-of-type(-n + 8){
+            background-color: rgb(255, 209, 232);
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body style="font-family: myfont;
+             font-size: 16px;">
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <h2>🍀 2025년 5월 달력 !! 🫧</h2>
+    <!-- div.wrapper>p.err*5+div.box{$}*30 -->
+    <div class="wrapper">
+        <p class="err">🫧</p>
+        <p class="err"></p>
+        <p class="err"></p>
+        <p class="err"></p>
+        <p class="err">☀️</p>
+        <div class="bo3x">🪟</div>
+        <div class="bo3x">🌈</div>
+        <div class="bo3x">1</div>
+        <div class="bo2x">2</div>
+        <div class="b1ox">3</div>
+        <div class="bo1x">4</div>
+        <div class="b1ox">5</div>
+        <div class="bo6x">6</div>
+        <div class="bo3x">7</div>
+        <div class="box4">8</div>
+        <div class="bo4x">9</div>
+        <div class="bo5x">10</div>
+        <div class="bo6x">11</div>
+        <div class="bo7x">12</div>
+        <div class="bo2x">13</div>
+        <div class="bo7x">14</div>
+        <div class="bo6x">15</div>
+        <div class="bo1x">16</div>
+        <div class="bo3x">17</div>
+        <div class="box">18</div>
+        <div class="bo3x">19</div>
+        <div class="bo2x">20</div>
+        <div class="box">21</div>
+        <div class="b3ox">22</div>
+        <div class="b9ox">23</div>
+        <div class="b5ox">24</div>
+        <div class="bo6x">25</div>
+        <div class="b7ox">26</div>
+        <div class="b8ox">27</div>
+        <div class="bo9x">28</div>
+        <div class="b9ox">29</div>
+        <div class="bo9x">30</div>
+        <div class="bo9x">31</div>
+    </div>
+</body>
+</html>

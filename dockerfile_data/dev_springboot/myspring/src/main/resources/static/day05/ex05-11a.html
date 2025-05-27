@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grandparent{
+            background-color: rgb(242, 255, 127);
+            width : 200px;
+            height : 200px;
+            position : relative;
+        }
+        .parent {
+            background-color: rgb(124, 218, 48);
+            width: 150px;
+            height : 150px;
+            position:absolute;
+            top:20px
+        }
+        .child{
+            background-color: rgb(220, 255, 163);
+            width: 50px;
+            height : 50px;
+            position :absolute;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <h1>조부모, 부모, 자식관계 일 때 !</h1>
+    <!-- div.grandparent>div.parent>div.child -->
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+</body>
+</html>

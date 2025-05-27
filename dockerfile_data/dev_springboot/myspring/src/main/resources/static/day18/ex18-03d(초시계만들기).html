@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .clock {
+        position: relative;
+        height: 500px;
+        width: 500px;
+        border-radius: 50%;
+        border: 1px solid #000000;
+        background-color: rgba(255, 248, 182, 0.541);
+      }
+      #center {
+        position: absolute;
+        left: 250px;
+        top: 250px;
+        width: 1px;
+        height: 1px;
+        border: solid 2px black;
+        border-radius: 50%;
+        z-index: 2;
+      }
+      #sec {
+        position: absolute;
+        top: 50px;
+        left: 250px;
+        width: 2px;
+        height: 200px;
+        border: 1px solid red;
+        border-radius: 3px;
+        background-color: red;
+        transform-origin: bottom;
+      }
+      
+      button {
+        justify-content: ;
+      }
+    </style>
+    </head>
+  <body>
+    <button>시작</button>
+    <button>끝</button>
+
+    <div class="clock">
+      <div id="center"></div>
+      <div id="sec"></div>
+    </div>
+    <script>
+  const btn = document.querySelectorAll("button");
+  const sec = document.querySelector("#sec");
+
+  let timeId = null;
+  let num = 0;
+
+  const startTimer = () => {
+    if (timeId !== null) return; // 중복 실행 방지!
+    timeId = setInterval(() => {
+      num += 6;
+      if (num >= 360) {
+        num = 0;
+      }
+      sec.style.transform = `rotate(${num}deg)`;
+    }, 1000);
+  };
+
+  const stopTimer = () => {
+    clearInterval(timeId);
+    timeId = null;
+    num = 0;
+    sec.style.transform = `rotate(0deg)`; // 시계도 원위치!
+  };
+
+  btn[0].addEventListener("click", startTimer);
+  btn[1].addEventListener("click", stopTimer);
+</script>
+  </body>    
+</html>

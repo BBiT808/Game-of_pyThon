@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+        .dead, .live {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin : 30% auto ;
+            padding: 0;
+
+        }
+        .dead { 
+            font-weight: 500;
+            font-size: 1.6rem;
+            animation: mymove 2s /*alternate*/ ease-in-out;
+            background-color : rgba(225, 0, 255, 0.349);
+            color: #ffffff;
+            transition: color 1s;
+        }
+        .live {
+            font-weight: 500;
+            font-size: 1.6rem;
+            animation: mymove 2s /*alternate*/ ease-in-out;
+            background-color: rgba(255, 255, 0, 0.315);
+            color: #ffffff;
+            transition: color 1s;
+        }
+        @keyframes mymove {
+            0% {background-color : #ffffff;}
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        const now = dayjs();
+        const random = now.get("ms") % 2;
+        console.log(random);
+
+        if (random == 0) {
+        document.body.innerHTML = `<p class = dead>Game Over<br>당신은 타노스에 의해 우주를 위해 희생되었습니다.</p>`;
+        } else {
+        document.body.innerHTML = `<p class = live>당신은 살아남았습니다 !</p>`;}
+    </script>
+</body>
+</html>

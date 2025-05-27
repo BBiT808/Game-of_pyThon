@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자!!</title>
+    <style>
+        /* h2 중 id가 있는 녀석들을 잡아줘 !! */
+        h2[id]{
+            color : violet
+        }
+        p[class = "items"]{
+            color : cornflowerblue;
+        }
+        p[class|="items"]{
+            color : coral;
+        }
+        /* p 중 class에 items가 들어간 것 전부 !!!  */
+        p[class*="items"]{
+            color : turquoise
+        }
+        /* class 끝에 items가 들어가는 것들 전부 !! */
+        p[class$="items"]{
+            color : lawngreen;
+        }
+        p[class^="items"]{
+            color : rosybrown;
+        }
+        p[class~="items"]{
+            color : gold;
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <h1 keh ="what">속성선택자 !!</h1>
+    <h2 class ="logo">서울특별시</h2>
+    <h2 id ="kyunggi">경기도!!</h2>
+
+    <!-- p.items{작성합니다.}*5 -->
+    <p class="items">주소록을 작성합니다.</p>
+    <p class="itemspage">전화번호를 작성합니다.</p>
+    <p class="screenitems">건강기록부를 작성합니다.</p>
+    <p class="I items you">금전출납부를 작성합니다.</p>
+    <p class="items-1">손익계산서를 작성합니다.</p>
+    <p class="items-a">손익계산서를 작성합니다.</p>
+    <p class="a-items">손익계산서를 작성합니다.</p>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 100%;
+            text-align: center;
+            background-color: rgba(109, 81, 72, 0.829);
+            padding: 5px;
+            color: white;
+            top : 0;
+            position: fixed;
+            margin: 0;
+        }
+        /* h2{
+            color : #555;
+            text-align: center;
+        } */
+        ul{ 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 63px;
+        }
+        li{
+            list-style: none;
+            width: 300px;
+            height: 220px;
+            padding: 15px;
+            border : 1px solid #aaa;
+            margin : 10px 20px;
+            background-color: linen;
+            border-radius: 10px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .caption{
+            color: white;
+            text-align: center;
+            background-color: rgba(241, 194, 123, 0.37);
+            border-radius: 10px;
+            width: 300px;
+            height: 100%;
+            opacity: 0;
+            transition : all 0.5s ease-in;
+        }
+        li:hover .caption{
+            transform: translateY(-245px);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.box>h1{신상품 목록}+ul>(li>img+div.caption>h2{상품$}+p{상품 $ 설명 텍스트}+p{가격 : 1$,111원})*9 -->
+    <div class="box">
+        <h1>신상품 목록</h1>
+        <ul>
+            <li>
+                <img src="https://images.kolonmall.com/Prod_Img/10002940/2022/LM1/K1727077280262053BL01_LM1.jpg" 
+                alt="의류사진 1">
+                <div class="caption">
+                    <h2>상품1</h2>
+                    <p>상품 1 설명 텍스트</p>
+                    <p>가격 : 11,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://img1.shopcider.com/product/1665210463000-AxA2Y4.jpg?x-oss-process=image/resize,w_1050,m_lfit/quality,Q_60/interlace,1" 
+                alt="의류사진 2">
+                <div class="caption">
+                    <h2>상품2</h2>
+                    <p>상품 2 설명 텍스트</p>
+                    <p>가격 : 12,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://www.mytheresa.com/media/1094/1238/100/5d/P00862978.jpg" 
+                alt="의류사진 3">
+                <div class="caption">
+                    <h2>상품3</h2>
+                    <p>상품 3 설명 텍스트</p>
+                    <p>가격 : 13,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://m.ilsanghabo.com/web/product/big/202211/09daf073b398d5e1f5196cb7bd2a9ddf.jpg" 
+                alt="의류사진 4">
+                <div class="caption">
+                    <h2>상품4</h2>
+                    <p>상품 4 설명 텍스트</p>
+                    <p>가격 : 14,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXxaNqWuDt0KhzloHLx34epNmNkhWbDMwfdVEEVLqPGk81x9W75PtV3E0as6WfoUsAxwA&usqp=CAU" 
+                alt="의류사진 5">
+                <div class="caption">
+                    <h2>상품5</h2>
+                    <p>상품 5 설명 텍스트</p>
+                    <p>가격 : 15,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://karaku.co.kr/cdn/shop/files/3_60f194a3-4495-4d3f-8f78-84c53914a046.jpg?v=1727691687&width=1200" 
+                alt="의류사진 6">
+                <div class="caption">
+                    <h2>상품6</h2>
+                    <p>상품 6 설명 텍스트</p>
+                    <p>가격 : 16,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://cdn.imweb.me/thumbnail/20240404/8a7f842cdd7ef.png" 
+                alt="의류사진 7">
+                <div class="caption">
+                    <h2>상품7</h2>
+                    <p>상품 7 설명 텍스트</p>
+                    <p>가격 : 17,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://img.vogue.co.kr/vogue/2024/11/style_67248180f18d3-680x930.jpg" 
+                alt="의류사진 8">
+                <div class="caption">
+                    <h2>상품8</h2>
+                    <p>상품 8 설명 텍스트</p>
+                    <p>가격 : 18,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://image2.lotteimall.com/goods/18/91/58/2131589118_2.jpg/dims/resizemc/550x550/optimize" 
+                alt="의류사진 9">
+                <div class="caption">
+                    <h2>상품9</h2>
+                    <p>상품 9 설명 텍스트</p>
+                    <p>가격 : 19,111원</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

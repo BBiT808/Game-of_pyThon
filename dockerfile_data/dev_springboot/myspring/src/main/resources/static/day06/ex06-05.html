@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --mypink1 : rgb(241, 166, 191);
+            --mypink2 : rgb(255, 229, 241);
+            --mypink3 : rgb(253, 206, 213);
+            --mygreen1 : rgb(226, 255, 179);
+            --mygreen2 :  rgb(194, 255, 159);
+            --mygreen3 : rgb(178, 255, 126);
+            --myblue1 : rgb(222, 243, 255);
+            --myblue2 : rgb(236, 255, 253);
+            --myblue3 : rgb(196, 246, 255);
+            --mypurple1:rgb(238, 218, 255);
+            --mypurple2:rgb(252, 230, 255);
+            --mypurple3:rgb(218, 195, 255);
+        }
+        header,
+        footer {
+            width : 300px;
+            height: 40px;
+            background-color: var(--myblue2);
+            border : 5px solid var(--mypink3);
+            box-sizing: border-box;
+        }
+        nav{
+            width: 50px;
+            height: 250px;
+            background-color: var(--mypink3);
+            border : 5px solid var(--mypurple2);
+            box-sizing: border-box;
+            float: left;
+        }
+        main{
+            width : 250px;
+            box-sizing: border-box;
+            margin-left: 50px;
+        }
+        article{
+            height: 50px;
+            box-sizing: border-box;
+            background-color: var(--myblue1);
+            border : 5px solid var(--myblue3);
+        }
+        section{
+            height: 200px;
+            box-sizing: border-box;
+            background-color: var(--mypurple1);
+            border: 5px solid var(--mypurple3);
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <!-- div.box>header{header}+div>nav{nav}+main>article{article}+section{section}^^footer{footer} -->
+    <div class="box">
+        <header>header</header>
+            <div>
+                <nav>nav</nav>
+                <main>
+                    <article>article</article>
+                    <section>section</section>
+                </main>
+            </div>
+            <footer>footer</footer>
+    </div>
+</body>
+</html>

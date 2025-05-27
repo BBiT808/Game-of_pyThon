@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교재 예제 3-2-8.html p153!!!!</title>
+    <script>
+        const rawInput = prompt('태어난 해를 입력해주세요.','')
+        const year = Number(rawInput)
+        const e = year % 12
+
+        let result
+        if (e===0) {result = '잔나비 🐵'}
+        else if (e==1) {result = '닭 🐔'}
+        else if (e==2) {result = '개 🐶'}
+        else if (e==3) {result = '돼지 🐷'}
+        else if (e==4) {result = '쥐 🐭'}
+        else if (e==5) {result = '소 🐮'}
+        else if (e==6) {result = '호랑이 🐯'}
+        else if (e==7) {result = '토끼 🐰'}
+        else if (e==8) {result = '용 🐲'}
+        else if (e==9) {result = '뱀 🐍'}
+        else if (e==10) {result = '말 🐴'}
+        else if (e==11) {result = '양 🐑'}
+        alert(`${year}년에 태어났다면 ${result} 띠예요 ! `)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

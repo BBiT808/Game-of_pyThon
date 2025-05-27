@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* form {
+            margin : 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } */
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px;
+            /* justify-content: center;
+            justify-items: center; */
+            height: 100%;
+        }
+        label{
+            background-color: rgb(214, 243, 161);
+            color: rgb(255, 255, 255);
+            margin: 20px;
+            padding: 30px 50px 40px;
+            border-radius: 20px;
+            font-size: 5rem;
+            /* line-height: 2.2rem; */
+        }
+        input{
+            display : none;
+        }
+        /* button {
+            background-color: rgb(234, 238, 183);
+            padding: 10px;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 10px;
+        } */
+         #btn {
+            border-radius: 10px;
+            width: 100px;
+            background-color: rgba(175, 245, 109, 0.712);
+            padding: 10px;
+            color: rgb(255, 255, 255);
+            border: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+         }
+    </style>
+</head>
+<body>
+    <!-- <form action="">
+        <input type="file" id="fileinput">
+        <label for="fileinput">+</label>
+        <button type = "submit">전송</button>
+    </form> -->
+    <label for="fileinput">+</label>
+    <input type="file" id="fileinput">
+    <button id = "btn">전송</button>
+    <script>
+        const btn = document.querySelector("#btn") ;
+        const inp = document.querySelector("#fileinput");
+        inp.addEventListener("change", () => {
+            console.log(inp.files[0].name, inp.files[0].size);
+            if (inp.files[0].size > 3 * 1024 * 1024) {
+                alert("파일의 용량이 3M를 초과하였습니다 !");
+            }
+        });
+    </script>
+</body>
+</html>

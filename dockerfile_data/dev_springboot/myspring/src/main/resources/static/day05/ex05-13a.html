@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교재 예제 : 박스 영역! p275-277</title>
+    <style>
+        #box1{
+            background: #ffd800;
+            float:left;
+            width : 70px;
+            height: 50px;
+            line-height: 40px;
+            text-align: center;
+            margin : 0 10px
+        }
+        #box2 {
+            background : #0094ff;
+            float : right;
+            width : 70px;
+            height: 50px;
+            line-height: 40px;
+            text-align: center;
+            margin : 0 10px
+        }
+        
+        #left{
+            background: #ffd800;
+            float:left;
+            width : 100px;
+            height: 100px;
+            line-height: 40px;
+            margin:10px;
+        }
+        #right{
+            background : #0094ff;
+            float : right;
+            width : 100px;
+            height: 100px;
+            line-height: 40px;
+            margin:10px;
+        }
+        .clear {
+            clear:both;
+            padding-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <!-- div.wrapper>div.box#box1{박스1}+div.box#box2{박스2}+p{lorem15} -->
+    <div class="wrapper">
+        <div class="box" id="box1">박스1</div>
+        <div class="box" id="box2">박스2</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ullam fuga, eos sit molestias tenetur!</p>
+    </div>
+    <hr />
+    <!-- div.wrapper>div.sidebar#left{사이드바}+div.sidebar#right{사이드바}+p{lorem30}+p.clear{lorem15} -->
+    <div class="wrapper">
+        <div class="sidebar" id="left">사이드바</div>
+        <div class="sidebar" id="right">사이드바</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis corrupti delectus repellat. Nihil officia doloribus veniam velit culpa in, earum vitae, quasi illum sed soluta, enim odio distinctio quae veritatis.</p>
+        <p class="clear">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo dolorum ad laboriosam voluptates praesentium in.</p>
+    </div>
+</body>
+</html>

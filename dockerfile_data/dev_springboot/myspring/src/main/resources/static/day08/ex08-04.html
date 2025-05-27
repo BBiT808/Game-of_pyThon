@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height :200px;
+        }
+        .container {
+            border : 4px solid rgb(247, 161, 247);
+            margin : 50px;
+        }
+        .transformed{
+            background-color: rgba(255, 182, 193, 0.575);
+            border-radius: 10px;
+            transition: transform 1s ease;
+            transition: all 1s ease-in-out;
+            /* transition: all 1s ease-in; */
+            /* transition: all 1s ease-out; */
+            /* transition: all 1s linear; */
+        }
+        .transformed:hover{
+            /* transform : skew(-90deg); 반대로 비틀어줌!!*/
+            /* transform : skew(90deg); */
+            transform : skew(225deg);
+            /* transform : skewX(30deg); */
+            /* transform : skewY(30deg); */
+            /* transform : skew(30deg, 40deg); */
+            /* transform : skew(1turn); */
+            /* transform : skew(0.5turn); */
+            /* deg, rad, grad, turn */
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- div.container>div.transformed{transformed} -->
+    <div class="container">
+        <div class="transformed">transformed</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- 20250522 html 수업 벌써 19일차 ..!!!! 크악 어제 야구는 무승부 ㅜ.ㅜ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEach(Not Doechii)</title>
+    <script>
+        const arr = [11,22,33,44,55,66,77,88,99]
+        // arr.forEach(function (value, index, array) {
+        //     console.log(value);
+        //     console.log(index);
+        //     console.log(array);
+        // });
+        arr.forEach((v, i) => console.log(`인덱스는 ${i + 1} 값은 ${v*v}`));
+        // 맨 앞에 v를 꼭 넣어줘야 한다 !! (앞에 Each에는 다 써도 뒤에 log에 다 안 써도 됨 !!)
+        arr.forEach((_, i) => console.log(`인덱스는 ${i + 1}`));
+         // 나 v는 값으로 안써요~
+
+        const array = [];
+        arr.forEach((v) => array.push(v*2));
+        console.log(array);
+    </script>
+ </head>
+ <body>
+    <!-- forEach : for x in ~~ 순회
+    map : x -> y(전 후 양이 변하지 않는다!!)
+    filter : x -> y(전 후 양이 변한다 !!)
+
+    ** reducd : 위에 꺼 까지 한 번에 다 가능!!! -->
+ </body>
+ </html>

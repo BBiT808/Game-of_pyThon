@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(255, 250, 205, 0.432);
+            padding-top: 8rem;
+            display: flex;
+            justify-content: center;
+        }
+        .card{
+            background-color: #fff;
+            max-width: 360px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 30px;
+            overflow: hidden;
+            /* box-shadow: 0;
+            font: 1.5rem rgba(0,0,0,0.5); */
+        }
+        .banner{
+            background-image: url(https://image.utoimage.com/preview/cp924216/2021/06/202106021832_206.jpg);
+            display: flex;
+            justify-content: center;
+        }
+        .profile{
+            width: 125px;
+            height : 125px;
+            /* background-image: url(https://i.namu.wiki/i/y4diJhWT7WoxpZUC0T9yQ9xP6YHL1aZ_Q2MpQfMNXlJLr7QNo_lB8MTKkwFL3jx2OZD0sY_WdEO9zBbrcp6zgw.webp); */
+            background-image: url(./img/pngegg.png);
+            background-size: 150px;
+            border-radius: 50%;
+            box-shadow: 5px 10px 20px rgba(0,0,0,0.5);
+            transform : translateY(50%);
+            transition: transform 0.3s ease;
+            /* position : relative;
+            top : 50px */
+        }
+        .profile:hover{
+            transform : translateY(50%) scale(1.3);
+        }
+        .name{
+            text-align : center;
+            padding-top: 60px;
+        }
+        .follow-btn{
+            padding : 0 2rem 8px;
+            display : flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .follow-btn button{
+            font-size : medium;
+            font-weight : bold;
+            background-color: rgb(255, 228, 241);
+            border : none;
+            padding: 1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+        .desc {
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.card>div.banner>div.profile^h2.name{Eunhee}+div.follow-btn+div.desc{내용들...} -->
+    <div class="card">
+        <div class="banner">
+            <div class="profile"></div>
+        </div>
+        <h2 class="name">Eunhee</h2>
+        <div class="follow-btn"><button>🍓  follow  🍓</button></div>
+        <div class="desc">
+            부...지런히... 더 배우고.. 얼...른 자라서....
+            새나라의.. 새 일꾼이... 되겠읍니다....
+        </div>
+    </div>
+</body>
+</html>

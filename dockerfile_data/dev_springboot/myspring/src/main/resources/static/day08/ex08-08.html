@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            display: flex;
+            부모에게 적용!! ; 자식들이 알아서 잘해요~ 
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        } */
+        div{
+            width:200px;
+            height: 200px;
+            background-color: rgb(251, 126, 255);
+            animation: mymove 2s /*alternate*/ infinite ease;
+        }
+        @keyframes mymove{
+            /* from{
+                transform: translate(0);
+            }
+            to {
+                transform: translate(500px);
+            } */
+             0%{
+                transform: translate(0);
+             }
+             25% {
+                transform :translate(500px, 0);
+             }
+             60%{
+                transform: translate(500px, 500px);
+             }
+             80%{
+                transform: translate(0,500px);
+             }
+        }
+
+        /* 회전 ~!!!
+        justify-content : 주축!!! ; 기본은 주축이 왼쪽에서 오른쪽에서 가는 것!!
+        align-items : 교차축!! ; 기본은 교차축이 위에서 아래로 가는 것 !!*/
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

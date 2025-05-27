@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .clock {
+        position: relative;
+        height: 500px;
+        width: 500px;
+        border-radius: 50%;
+        border: 1px solid #000000;
+        background-color: rgb(149, 230, 149);
+      }
+      #center {
+        position: absolute;
+        left: 250px;
+        top: 250px;
+        width: 1px;
+        height: 1px;
+        border: solid 2px rgb(207, 16, 255);
+        border-radius: 50%;
+        z-index: 2;
+      }
+      #hour {
+        position: absolute;
+        top: 100px;
+        left: 250px;
+        width: 3px;
+        height: 150px;
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color: black;
+        transform-origin: bottom;
+
+      }
+      #min{
+        position: absolute;
+        top: 70px;
+        left: 250px;
+        width: 3px;
+        height: 180px;
+        border-radius: 3px;
+        background-color: black;
+        transform-origin: bottom;
+      }
+      #sec {
+        position: absolute;
+        top: 50px;
+        left: 250px;
+        width: 2px;
+        height: 200px;
+        border: 1px solid red;
+        border-radius: 3px;
+        background-color: red;
+        transform-origin: bottom;
+      } 
+    </style>
+    </head>
+  <body>
+    <div class="clock">
+      <div id="center"></div>
+      <div id="hour"></div>
+      <div id="min"></div>
+      <div id="sec"></div>
+    </div>
+    <script>
+    const sec = document.querySelector("#sec");
+    const min = document.querySelector("#min");
+    const hour = document.querySelector("#hour");
+
+    let num1 = 0;
+    let num2 = 0;
+    let num3 = 0;
+
+    setInterval(() => {
+        num1 += 6;
+        num2 += 0.1;
+        num3 += 0.0083;
+        if (num1 >= 360) {
+            num1 = 0;
+        }
+        if (num2 >= 360) {
+            num2 = 0;
+        }
+        if (num3 >= 360) {
+            num3 = 0;
+        }
+        sec.style.transform = `rotate(${num1}deg)`;
+        min.style.transform = `rotate(${num2}deg)`;
+        hour.style.transform = `rotate(${num3}deg)`;
+    }, 1000);
+    </script>
+    </body>
+    </html>

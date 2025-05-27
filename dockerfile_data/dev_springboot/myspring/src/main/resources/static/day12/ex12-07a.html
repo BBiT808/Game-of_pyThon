@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;          
+        }
+        td {
+            margin: 0;
+            border : 1px solid black;
+            text-align: center;
+            padding: 15px;
+        }
+        p { font-weight: 500;
+            font-size: 1.6rem;
+            animation: mymove 2s /*alternate*/ infinite ease-in-out;
+            color : rgb(54, 50, 255);
+            transition: color 1s;
+        }
+        @keyframes mymove {
+            0% {color : #f53987}
+        }
+
+    </style>
+</head>
+<body></body>
+<script>
+    const inp = +prompt("현재 온도를 입력하세요!");
+
+    let message = "";
+    if (inp < 16) {
+        message = "정상온도 이하로 벗어났습니다. 🥶";
+    } else if (inp < 22) {
+        message = "시원하네요. ☺️";
+    } else if (inp < 29) {
+        message = "보통이예요. 🙂";
+    } else if (inp < 32) {
+        message = "갑갑하네요. 😅`";
+    } else {
+        message = "정상온도를 넘겼습니다 ! 🥵";
+    }
+
+    const list = `
+    <table>
+    <tr>
+        <td colspan="6"> 16 미만</td>
+        <td colspan="4"> 16 이상 ~ 22 미만</td>
+        <td colspan="4"> 22 이상 ~ 29 미만</td>
+        <td colspan="3"> 29 이상 ~ 32 미만</td>
+        <td colspan="6">32 이상</td>
+    </tr>
+    <tr>
+        <td style="background-color: blueviolet;"></td>
+        <td style="background-color: blueviolet;"></td>
+        <td style="background-color: blueviolet;"></td>
+        <td style="background-color: blueviolet;"></td>
+        <td style="background-color: blueviolet;"></td>
+        <td style="background-color: blueviolet;"></td>
+        <td style="background-color: cornflowerblue;"></td>
+        <td style="background-color: cornflowerblue;"></td>
+        <td style="background-color: cornflowerblue;"></td>
+        <td style="background-color: cornflowerblue;"></td>
+        <td style="background-color: yellow;"></td>
+        <td style="background-color: yellow;"></td>
+        <td style="background-color: yellow;"></td>
+        <td style="background-color: yellow;"></td>
+        <td style="background-color: bisque;"></td>
+        <td style="background-color: bisque;"></td>
+        <td style="background-color: bisque;"></td>
+        <td style="background-color: tomato;"></td>
+        <td style="background-color: tomato;"></td>
+        <td style="background-color: tomato;"></td>
+        <td style="background-color: tomato;"></td>
+        <td style="background-color: tomato;"></td>
+        <td style="background-color: tomato;"></td>
+    </tr>
+    <tr>
+    <td colspan="6">${inp < 16 ? message : ""}</td>
+    <td colspan="4">${(inp >= 16 && inp < 22) ? message : ""}</td>
+    <td colspan="4">${(inp >= 22 && inp < 29) ? message : ""}</td>
+    <td colspan="3">${(inp >= 29 && inp < 32) ? message : ""}</td>
+    <td colspan="6">${inp >= 32 ? message : ""}</td>
+</tr>
+    </table>`;
+    document.write(list);
+    if (inp >= 32) {
+        document.write(`<p>지금 온도는 ${inp}이며, ${message}</p>`);
+    }
+</script>
+</html>

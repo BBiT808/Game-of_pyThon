@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1부터 100까지 중
+        // 3의 배수에 '짝!'
+        // 5의 배수에는 '오~'
+        // 15의 배수에는 '아싸!'
+
+        /* 1부터 100까지 1씩 증가하는 배열을 만들어라 */
+        const arr = Array(100)
+        .fill(0)
+        .map((v,i)=> i + 1);
+        
+        /* 그 중에서 홀수(3의 배수)만 배열로 뽑아내라 !! */
+        const ft1 = (v) => v%3 === 0;
+        const ft2 = (v) => v%5 === 0;
+        const ft3 = (v) => v%15 === 0;
+        const three = arr.filter(ft1);  //((v,i,a) => v%2)
+        const five = arr.filter(ft2)
+        const fifth = arr.filter(ft3)
+        console.log(three);
+        console.log(five);
+        console.log(fifth);
+
+        const result = arr.map((v) => {
+            if (v%15 === 0) return "아싸!";
+            else if (v%5 === 0) return "오~";
+            else if (v%3 === 0) return "짝!";
+            else return v;
+        })
+
+        console.log(result)
+
+    </script>
+</body>
+</html>

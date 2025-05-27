@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* box size를 content box로 할 것인지, border box로 할 것인지! */
+        .box1{
+            box-sizing: border-box;
+            border : 20px solid #0098;
+            width : 200px;
+            height: 100px;
+            margin-left: 20px;
+        }
+        .box2{
+            box-sizing: content-box;
+            border : 20px solid skyblue;
+            width: 200px;
+            height: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <p style = "background-color : rgba(205, 250, 218, 0.705)"><a href = "index.html"> 🐈🏠🪴 </a></p>
+    <div class ="box1"></div>
+    <div class ="box2"></div>
+</body>
+</html>

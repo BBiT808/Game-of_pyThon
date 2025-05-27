@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠키 뽑기 시뮬레이터 🍪</title>
+    <!-- <style>
+        table { border-collapse: collapse; }
+        td, th { border: 1px solid #aaa; 
+                 padding: 4px; }
+      </style> -->
+</head>
+<body>
+    <script>
+        let list = "";
+        const ran = Math.floor(Math.random()*100);
+        for (let i =1 ; i <=10000; i++) {
+        if(ran<0.03){
+            list += `<h1> 0.03%의 확률로 비스트 이터널슈가 쿠키 출현</h1>`;
+        } else if (ran < 3.03) {
+            list += `<h1>3%의 확률로 슈퍼에픽 스타더스트 쿠키 출현</h1>`
+        } else if (ran < 8.03) {
+            list += `<h1>5%의 확률로 에픽 아라모드맛 쿠키 출현</h1>`
+        } else if (ran < 18.03) {
+            list += `<h1>10%의 확률로 레어 공주맛 쿠키 출현</h1>`
+        } else {
+            list += `<h1> 일반 등급 용감한 쿠키 출현</h1>`
+        }
+    }
+        list += `<hr>랜덤수치는 ${ran}값입니다.`;
+        document.body.innerHTML = list;
+
+
+
+
+
+//         let list = "";
+
+//         for (let j = 1; j <= 10; j++) {
+//     list += `<table><tr><th colspan="2">🍀 ${j}회차 쿠키 뽑기 결과 🍀</th></tr>`;
+//     for (let i = 1; i <= 1000; i++) {
+//         const ran = Math.random() * 1000;
+//         let result = "";
+//         if (ran < 0.03) {
+//             result = `🌟 0.03% 확률! 비스트 이터널슈가 쿠키 출현! 확률 ${ran}`;
+//         } else if (ran < 3) {
+//             result = `⭐ 3% 확률! 슈퍼에픽 스타더스트 쿠키 출현! 확률 ${ran}`;
+//         } else if (ran < 5) {
+//             result = `✨ 5% 확률! 에픽 아라모드맛 쿠키 출현! 확률 ${ran}`;
+//         } else if (ran < 10) {
+//             result = `🌸 10% 확률! 레어 공주맛 쿠키 출현! 확률 ${ran}`;
+//         } else {
+//             result = `🍪 일반 등급 용감한 쿠키 출현! 확률 ${ran}`;
+//         }
+
+//         list += `<tr><td>${i}번째 뽑기</td><td>${result}</td></tr>`;
+//     }
+//     list += "</table><br/>";
+// }
+//         document.body.innerHTML = list;
+    </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 300px;
+            background-color: rgb(246, 250, 215);
+            margin: 30px auto;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 0 20px 25px;
+            box-sizing: border-box;
+        }
+        #box div{
+            border-radius: 10px;
+            width:  40px;
+            margin: 5px;
+            justify-content: space-evenly;
+        }
+        #box div:nth-of-type(1) {
+            background-color: rgb(255, 165, 228);
+        }
+        #box div:nth-of-type(2) {
+            background-color: rgb(165, 255, 255);
+        }
+        #box div:nth-of-type(3) {
+            background-color: rgb(255, 174, 0);
+        }
+        #box div:nth-of-type(4) {
+            background-color: rgba(0, 47, 255, 0.425);
+        }
+        #box div:nth-of-type(5) {
+            background-color: rgb(255, 230, 0);
+        }
+        #box div:nth-of-type(6) {
+            background-color: rgb(167, 255, 146);
+        }
+        table {
+            width: 500px;
+            margin: 100px auto 0;
+        }
+        #none {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        th,
+        tr,
+        td {
+            background-color: rgba(255, 250, 205, 0.479);
+            padding: 15px;
+            font-weight: 500;
+            text-align: center;
+        }
+        th {
+            background-color: rgb(221, 148, 221);
+        }
+    </style>
+    <script>
+        let list = "";
+        let dice = (i = 0);
+        let lucky = 0;
+        const diceCount = [0,0,0,0,0,0];
+        const gameEnd = 10 * 1000 ; //프로그래머들은 계산의 효율을 위해 1000씩 끊는대~
+        const want = +prompt("조작할 확률을 입력하세요 ! 😎") || 3;
+        const choice = want / 1.6 ;
+
+            while(i < gameEnd) {
+                const array = new Uint8Array(2); // 배열을 몇 개 만들 것인가 정해줘야 함 !!
+                    crypto.getRandomValues(array);
+                    dice = (array[0] % 6) + 1;
+                    lucky = (array[1] % 100 ) + 1;
+
+                if(dice ==1){
+                    if (lucky <=choice) {
+                        diceCount[2]++;
+                    } else {
+                        diceCount[0]++;}
+                } else if(dice ==2){
+                    if (lucky <=choice) {
+                        diceCount[2]++;
+                    } else {
+                        diceCount[1]++;}
+                } else if(dice ==3){
+                    if (lucky <=choice) {
+                        diceCount[2]++;
+                    } else {
+                        diceCount[2]++;}
+                } else if(dice ==4){
+                    if (lucky <=choice) {
+                        diceCount[2]++;
+                    } else {
+                        diceCount[3]++;}
+                } else if(dice ==5){
+                    if (lucky <=choice) {
+                        diceCount[2]++;
+                    } else {
+                        diceCount[4]++;}
+                } else if(dice ==6){
+                    if (lucky <=choice) {
+                        diceCount[2]++;
+                    } else {
+                        diceCount[5]++;}
+                }
+                i ++;
+            }
+            console.log(diceCount);
+            let sumDice = 0; // 이렇게 변수를 먼저 선언한 후 포문을 작성해야 함!!
+                for (let j = 0; j<=5; j++ ) {
+                    sumDice += diceCount[j] 
+                };
+            console.log(sumDice);
+            const perArr = [];
+
+            for (let k = 0; k < 6; k ++) {
+                perArr.push(((diceCount[k] / gameEnd) *100).toFixed(2));
+            }
+    </script>
+</head>
+<body>
+    <h1>🎲주사위 10000번 째 굴리는 중 . . .🎲</h1>
+    <h2 id = "disp"> 로 딩 중 .  .  .</h2> <!-- 요렇게 하면 로딩중 글자를 표시할 수 있어 !!! -->
+    <h2 id = "per">분 석 중 . . .</h2>
+    <h3 id = "verif">분 석 중 . . .</h3>
+
+    <div id = "result"></div>
+
+    <script>
+        const h2 = document.querySelector("#disp"); //요로코롬 아이디를 특정해서 할 수도 있대~
+        setTimeout(() => {
+            h2.textContent = `${diceCount}`;
+        }, 2000);
+
+        const per = document.querySelector("#per");
+        setTimeout(() => {
+            per.textContent = `${perArr}`;
+        }, 3000);
+
+        const h3 = document.querySelector("#verif");
+        setTimeout(() => {
+            h3.textContent = `${sumDice}회 검증 완료`;
+        }, 4000);
+
+        // h2.innerHTML = `${diceCount}`;  
+        // document.body.innerHTML = `<h1>${diceCount}</h1>`;  // 표시하는 여러가지 방법이 있어~
+    
+    list+=`    <table border = "1">`
+    list+=`    <tr>`
+    list+=`        <th></th>`
+    list+=`        <th>1</th>`
+    list+=`        <th>2</th>`
+    list+=`        <th>3</th>`
+    list+=`        <th>4</th>`
+    list+=`        <th>5</th>`
+    list+=`        <th>6</th>`
+    list+=`    </tr>`
+    list+=`    <tr>`
+    list+=`        <td>횟수</td>`
+    list+=`        <td>${diceCount[0]}</td>`
+    list+=`        <td>${diceCount[1]}</td>`
+    list+=`        <td>${diceCount[2]}</td>`
+    list+=`        <td>${diceCount[3]}</td>`
+    list+=`        <td>${diceCount[4]}</td>`
+    list+=`        <td>${diceCount[5]}</td>`
+    list+=`    </tr>`
+    list+=`    <tr>`
+    list+=`        <td>확률</td>`
+    list+=`        <td>${perArr[0]}%</td>`
+    list+=`        <td>${perArr[1]}%</td>`
+    list+=`        <td>${perArr[2]}%</td>`
+    list+=`        <td>${perArr[3]}%</td>`
+    list+=`        <td>${perArr[4]}%</td>`
+    list+=`        <td>${perArr[5]}%</td>`
+    list+=`    </tr>`
+    list+=`    <tr>`
+    list+=`        <td>검증</td>`
+    list+=`        <td colspan = "3"> 총 횟수 : ${sumDice}</td>`
+    list+=`        <td colspan = "3"> 총 확률 : ${Math.floor((sumDice  / gameEnd)*100).toFixed(2)}%</td>`
+    list+=`    </tr>`
+    list+=`</table>`
+    document.querySelector('#result').innerHTML = "";
+    // 그래프 그리기 !!
+    list += `<div id="box">`;
+        for (let i =0 ; i < 6; i ++) {
+            let graph = ((diceCount[i] / gameEnd) * 350).toFixed(2);
+        list += `
+            <div id = "none">
+        <span style="margin-bottom: 5px; font-size: 14px;">${perArr[i] + '%'}</span>
+        <div style="height: ${graph}px"></div>
+            </div>`
+            }
+      list += `</div>`;
+      document.querySelector('#result').innerHTML = list;
+    </script>
+</body>
+</html>
