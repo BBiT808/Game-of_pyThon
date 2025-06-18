@@ -4,7 +4,7 @@
 | 크롤링             | 가수 기사크롤링.ipynb                            | [보기](https://github.com/BBiT808/Game-of_pyThon/blob/main/python/py08_external-library.ipynb) |
 | 크롤링 응용        | 사이트 음악순위 크롤링.ipynb                     | [보기](https://github.com/BBiT808/Game-of_pyThon/blob/main/python/py08_external-library.ipynb) |
 | 크롤링 응용        | 식단 크롤링 챗봇전송.ipynb                        | [보기](https://github.com/BBiT808/Game-of_pyThon/blob/main/python/py08_external-library.ipynb) |
-| 크롤링 응용        | 셀레니움크롤링1w.ipynb                           | [보기](https://github.com/BBiT808/Game-of_pyThon/blob/main/셀레니움크롤링1w.ipynb) |
+| 크롤링 응용        | 셀레니움크롤링1.ipynb                           | [보기](https://github.com/BBiT808/Game-of_pyThon/blob/main/셀레니움크롤링1.ipynb) |
 | Open API 활용      | Telegram챗봇&구글gemini_API.ipynb                | [보기](https://github.com/BBiT808/Game-of_pyThon/blob/main/python/py09_AI.ipynb) |
 | DB 실습 (CRUD)     | CRUD_mysql.ipynb                                 | [보기](https://github.com/BBiT808/Game-of_pyThon/blob/main/python/py12_CRUD_mysql.ipynb) |
 | DB 실습 (CRUD)     | CRUD_oracle.ipynb                                | [보기](https://github.com/BBiT808/Game-of_pyThon/blob/main/python/py12_CRUD_oracle.ipynb) |
